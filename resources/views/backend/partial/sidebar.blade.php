@@ -41,9 +41,17 @@
             <div class="collapse" id="sidebar-layouts">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="pages/layout/compact-menu.html">Need For Speed</a></li>
+
+
                 <li class="nav-item"> <a class="nav-link" href="pages/layout/sidebar-collapsed.html">Player Unknown Battle Ground</a></li>
+
+
                 <li class="nav-item"> <a class="nav-link" href="pages/layout/sidebar-hidden.html">Free Fire</a></li>
+
+
                 <li class="nav-item"> <a class="nav-link" href="pages/layout/sidebar-hidden.html">Clash Of Clan</a></li>
+
+                
 
               </ul>
             </div>
@@ -89,5 +97,12 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#" aria-expanded="false" aria-controls="form-elements">
+              <i class="fab fa-wpforms menu-icon"></i>
+              <span class="menu-title">Create Event</span>
+            </a>
+          </li>
+          
         </ul>
       </nav>

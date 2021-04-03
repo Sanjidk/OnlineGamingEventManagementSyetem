@@ -25,7 +25,7 @@
 
 
 
-  @include('components.header')
+  @include('backend.partial.header')
 
 
     
@@ -115,7 +115,7 @@
 
 
 
-@include('components.sidebar')
+@include('backend.partial.sidebar')
 
 
 
@@ -141,7 +141,7 @@ mjvjhhtcx
 
 
 
-  @include('components.footer')
+  @include('backend.partial.footer')
 
 
 
