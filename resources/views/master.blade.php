@@ -129,15 +129,16 @@
       <div class="content-wrapper">
 
 
-
-mjvjhhtcx
-
+    
 
 
-
+      @yield('page')
 
         </div>
         <!-- content-wrapper ends -->
+
+
+
 
 
 
