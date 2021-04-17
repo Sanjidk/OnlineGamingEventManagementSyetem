@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,19 @@ Route::get('/', function () {
 
 
 
+//Registration
+
+Route::get('registration/form',[UserController::class,'regform'])->name('reg.form');
+Route::post('registration/store',[UserController::class,'regStore'])->name('reg.store');
+
+
+//Login
+
+Route::get('login/form',[UserController::class,'loginForm'])->name('login.form');
+
+
+
+//Login Authentication
+
+Route::post('login/process',[UserController::class,'userLogin'])->name('user.login');
+Route::get('/logout',[UserController::class,'userLogout'])->name('user.logout');
