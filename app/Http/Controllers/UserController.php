@@ -11,10 +11,41 @@ class UserController extends Controller
 {
     public function regform()
     {
-
         //userlogin form
         return view('registration');
     }
+
+    public function register(Request $request)
+    {
+
+        $request->validate([
+            'name'=>'required',
+            'address'=>'required',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:6',
+            'birthDate'=>'required',
+            'phone'=>'required',
+
+        ]);
+
+        $users = new User();
+        $users->name =$request->name;
+        $users->address =$request->address;
+        $users->email =$request->email;
+        $users->password =bcrypt($request->password);
+        $users->birthDate =$request->birthDate;
+        $users->phone =$request->phone;
+        $users->save();
+
+        return redirect()->back()->with('message','Sucessfully Registered');
+    }
+
+
+// registration end
+
+
+// login form start
+
     public function loginForm()
     {
         return view('login');
@@ -25,7 +56,7 @@ class UserController extends Controller
 
         $request->validate([
             'email'=>'required|email',
-            'password'=>'required',
+            'password'=>'required|min:6',
 
         ]);
 
@@ -33,107 +64,20 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials))
         {
-            $request->session()->regenerate();
-
-            if(auth()->user()->user_type == 'Wholeseller' || auth()->user()->user_type == 'Farmer')
-            {
-
-                return redirect(route('home'));
-            }
-
-
-
+                return redirect()->route('frontend.master')->with('success','User Login Successfully.');
         }
-
-        else
-        {
             return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
+                'email' => 'Invalid Credentials.',
             ]);
-        }
     }
 
     public function userLogout()
     {
         Auth::logout();
-        return redirect()->back()->with('message','Logout Successful');
+        return redirect()->route('home')->with('success','Logout Successful');
 
     }
 
-
-
-    public function regStore(Request $request)
-    {
-
-        $request->validate([
-            'user_type'=>'required',
-            'username'=>'required',
-            'password'=>'required',
-            'email'=>'required',
-            'mobile_num'=>'required',
-            'address'=>'required',
-
-        ]);
-
-        $users = new User();
-        $users->user_type =$request->user_type;
-        $users->username =$request->username;
-        $users->password =bcrypt($request->password);
-        $users->email =$request->email;
-        $users->mobile_num =$request->mobile_num;
-        $users->address =$request->address;
-        $users->save();
-
-        return redirect()->back()->with('message','Sucessfully Registered');
-    }
-
-    Public function viewProfile()
-    {
-
-
-
-        return view('frontend.profile.view');
-
-    }
-
-    public function adminloginform()
-
-    {
-        return view('adminloginform');
-
-    }
-    public function adminloginprocess(Request $request)
-
-    {
-
-        $login = $request->only('email', 'password');
-
-        if (Auth::attempt($login)) {
-            $request->session()->regenerate();
-            if(auth()->user()->user_type == 'admin'){
-
-                return redirect(route('dashboard'));
-            }else{
-
-                return redirect()->back()->with('message','User Not Authorize');
-
-            }
-
-
-        }
-        else{
-
-            return redirect()->back()->with('message','Invalid credential');
-        }
-
-    }
-    public function adminlogout()
-    {
-
-        Auth::logout();
-        return redirect(route('adminlogin.form'));
-
-    }
 
 
 }

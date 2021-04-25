@@ -27,8 +27,8 @@
             </a>
             <div class="collapse" id="page-layouts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="pages/layout/boxed-layout.html">GAME MANAGER</a></li>
-                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="pages/layout/horizontal-menu.html">PARTICIPATOR</a></li>
+                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="">MANAGER</a></li>
+                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="">PARTICIPATORS</a></li>
               </ul>
             </div>
           </li>
@@ -51,7 +51,7 @@
 
                 <li class="nav-item"> <a class="nav-link" href="pages/layout/sidebar-hidden.html">Clash Of Clan</a></li>
 
-                
+
 
               </ul>
             </div>
@@ -103,6 +103,6 @@
               <span class="menu-title">Create Event</span>
             </a>
           </li>
-          
+
         </ul>
       </nav>

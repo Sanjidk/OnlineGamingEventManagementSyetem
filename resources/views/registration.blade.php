@@ -1,12 +1,13 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <!-- Enjoy! -->
     <title>Registration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
         body {
             background: url('https://wallpaperaccess.com/full/7445.jpg') fixed;
@@ -35,58 +36,85 @@
 
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
+
+
 <body>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
+
+<br>
+
+<a class="nav-link js-scroll-trigger" href="{{route('home')}}">
+    <button type="submit" class="btn btn-danger">
+        <i class="fas fa-power-off text-light"></i>
+        GO TO HOME
+    </button>
+</a>
+
 
 <div class="container">
     <br>
-    <form class="form-horizontal" role="form">
+
+    <form class="form-horizontal" role="form" action="{{route('register')}}" method="post">
+        @csrf
         <h2>Registration</h2>
+
+        @if(Session()->has('message'))
+            <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
+        @endif
+
         <div class="form-group">
-            <label for="userName" class="text-light col-sm-3 control-label">User Name</label>
+            <label for="name" class="text-light col-sm-3 control-label">User Name</label>
             <div class="col-sm-9">
-                <input type="text" id="userName" placeholder="User Name" class="form-control" autofocus>
+                <input type="text" id="name" placeholder="User Name" class="form-control" name= "name">
+                <span style="color: #13f3c3">@error('name'){{$message}}@enderror</span>
             </div>
         </div>
+
+
         <div class="form-group">
             <label for="address" class="text-light col-sm-3 control-label">Address</label>
             <div class="col-sm-9">
-                <input type="text" id="address" placeholder="Address" class="form-control" autofocus>
+                <input type="text" id="address" placeholder="Address" class="form-control" name= "address">
+                <span style="color: #13f3c3">@error('address'){{$message}}@enderror</span>
+
             </div>
         </div>
         <div class="form-group">
             <label for="email" class="text-light col-sm-3 control-label">Email</label>
             <div class="col-sm-9">
                 <input type="email" id="email" placeholder="Email" class="form-control" name= "email">
+                <span style="color: #13f3c3">@error('email'){{$message}}@enderror</span>
+
             </div>
         </div>
         <div class="form-group">
             <label for="password" class="text-light col-sm-3 control-label"> Password</label>
             <div class="col-sm-9">
-                <input type="password" id="password" placeholder="Password" class="form-control">
+                <input type="password" id="password" placeholder="Password" class="form-control" name= "password">
+                <span style="color: #13f3c3">@error('password'){{$message}}@enderror</span>
+
             </div>
         </div>
-        <div class="form-group">
-            <label for="password" class="text-light col-sm-3 control-label">Confirm Password</label>
-            <div class="col-sm-9">
-                <input type="password" id="password" placeholder="Password" class="form-control">
-            </div>
-        </div>
+
         <div class="form-group">
             <label for="birthDate" class="text-light col-sm-3 control-label">Date of Birth</label>
             <div class="col-sm-9">
-                <input type="date" id="birthDate" class="form-control">
+                <input type="date" id="birthDate" class="form-control" name= "birthDate">
+                <span style="color: #13f3c3">@error('birthDate'){{$message}}@enderror</span>
+
             </div>
         </div>
         <div class="form-group">
-            <label for="phoneNumber" class="text-light col-sm-3 control-label">Phone number </label>
+            <label for="phone" class="text-light col-sm-3 control-label">Phone Number</label>
             <div class="col-sm-9">
-                <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control">
+                <input type="number" id="phone" placeholder="Phone Number" class="form-control " name= "phone">
+                <span style="color: #13f3c3">@error('phone'){{$message}}@enderror</span>
+
                 <span class="text-light help-block">Your phone number won't be disclosed anywhere </span>
             </div>
         </div>
@@ -99,8 +127,10 @@
                 <span class="text-light help-block">*Required fields</span>
             </div>
         </div>
+
+
         <div class="col-sm-9 col-sm-offset-3">
-        <button type="submit" class="btn btn-danger btn-block">REGISTER</button><br>
+            <button type="submit" class="btn btn-danger btn-block">REGISTER</button>
         </div>
 
         <div id="register-link" class="text-right">
@@ -111,53 +141,6 @@
 
     </form> <!-- /form -->
 </div> <!-- ./container -->
-<script type="text/javascript">
-    $(function(){
-        $.validator.setDefaults({
-            highlight: function(element){
-                $(element)
-                    .closest('.form-group')
-                    .addClass('has-error')
-            },
-            unhighlight: function(element){
-                $(element)
-                    .closest('.form-group')
-                    .removeClass('has-error')
-            }
-        });
 
-        $.validate({
-            rules:
-                {
-                    password: "required",
-                    birthDate: "required",
-
-                    },
-                    email: {
-                        required: true,
-                        email: true
-                    }
-                },
-            messages:{
-                email: {
-                    required: true,
-                    email: true
-                }
-            },
-            password: {
-                required: " Please enter password"
-            },
-            birthDate: {
-                required: " Please enter birthdate"
-            },
-            email: {
-                required: ' Please enter email',
-                email: ' Please enter valid email'
-            },
-        }
-
-    });
-    });
-</script>
 </body>
 </html>

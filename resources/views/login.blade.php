@@ -11,10 +11,10 @@
         background-size: cover;
     }
     #login .container #login-row #login-column #login-box {
-        margin-top: 120px;
+        margin-top: 170px;
         max-width: 600px;
-        height: 320px;
-        border: 3px solid #08e1fa;
+        height: 370px;
+        border: 4px solid #08e1fa;
         background-color: #dbdbdb;
     }
     #login .container #login-row #login-column #login-box #login-form {
@@ -25,8 +25,17 @@
     }
 </style>
 
+
+    <a class="nav-link js-scroll-trigger" href="{{route('home')}}">
+            <button type="submit" class="btn btn-danger">
+                <i class="fas fa-power-off text-light"></i>
+                GO TO HOME
+            </button>
+        </a>
+
+
+
 <div id="login">
-    <br><br><br><br><br>
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
@@ -34,18 +43,33 @@
                     <form id="login-form" class="form" action="{{route('user.login')}}" method="post">
 
                         @csrf
+
+
                         <h3 class="text-center text-info">LogIn Form</h3>
+
+                        @if(Session()->has('message'))
+                            <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
+                        @endif
+
+
                         <div class="form-group">
                             <label for="email" class="text-info">Email:</label><br>
                             <input type="email" name="email" id="email" class="form-control">
+                            <span style="color: #790505">@error('email'){{$message}}@enderror</span>
+
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
                             <input type="password" name="password" id="password" class="form-control">
+                            <span style="color: #790505">@error('password'){{$message}}@enderror</span>
+
                         </div>
                         <div class="form-group">
                             <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                            <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-power-off text-light"></i>
+                                LOGIN
+                            </button>
                         </div>
                         <div id="register-link" class="text-right">
                             <a href="{{route('reg.form')}}" class="text-info">Register here</a>
