@@ -67,6 +67,21 @@
             <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
         @endif
 
+
+
+        <div class="form-group">
+            <label for="type" class="text-light col-sm-3 control-label">User Type</label>
+            <div class="col-sm-9">
+            <select  type="text" name="type" id="name" class="input-text" placeholder="Fill user name" required pattern="">
+                <option value="">Choose User Type</option>
+                <option value="Manager">Manager</option>
+                <option value="Participator">Participator</option>
+            </select>
+            </div>
+        </div>
+
+
+
         <div class="form-group">
             <label for="name" class="text-light col-sm-3 control-label">User Name</label>
             <div class="col-sm-9">

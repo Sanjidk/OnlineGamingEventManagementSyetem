@@ -1,34 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\User;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function regform()
     {
-        //userlogin form
         return view('registration');
     }
-
     public function register(Request $request)
     {
-
         $request->validate([
+            'type'=>'required',
             'name'=>'required',
             'address'=>'required',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:6',
             'birthDate'=>'required',
             'phone'=>'required',
-
         ]);
 
         $users = new User();
+        $users->type =$request->type;
         $users->name =$request->name;
         $users->address =$request->address;
         $users->email =$request->email;
@@ -37,15 +33,12 @@ class UserController extends Controller
         $users->phone =$request->phone;
         $users->save();
 
-        return redirect()->back()->with('message','Sucessfully Registered');
+        return redirect()->back()->with('message','Sucessfully Registered. Go to Login Page');
     }
-
-
 // registration end
 
 
 // login form start
-
     public function loginForm()
     {
         return view('login');
@@ -53,32 +46,37 @@ class UserController extends Controller
 
     public function userLogin(Request $request)
     {
-
         $request->validate([
             'email'=>'required|email',
             'password'=>'required|min:6',
-
         ]);
-
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials))
         {
-                return redirect()->route('frontend.master')->with('success','User Login Successfully.');
+            $request->session()->regenerate();
+
+            if(auth()->user()->type == 'Participator' || auth()->user()->type == 'Manager')
+            {
+           return redirect()->route('frontend.master')->with('success','User Login Successfully.');
+            }
         }
+        else
+        {
             return back()->withErrors([
-                'email' => 'Invalid Credentials.',
+                'email' => 'Invalid Credentials',
             ]);
+        }
     }
 
     public function userLogout()
     {
         Auth::logout();
-        return redirect()->route('home')->with('success','Logout Successful');
-
+        return redirect()->route('home')->with('success','Logout Successfully');
     }
-
-
-
 }
+// user login and logout function done
+
+
+
 
