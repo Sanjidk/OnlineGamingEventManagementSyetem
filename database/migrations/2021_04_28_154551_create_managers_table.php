@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class phCreateManagersTable extends Migration
+class CreateManagersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,18 @@ class phCreateManagersTable extends Migration
     {
         Schema::create('managers', function (Blueprint $table) {
             $table->id();
+            $table->string('orgName');
+            $table->string('manager');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('eventName');
+            $table->string('place');
+            $table->string('fee');
+            $table->string('eventDate');
+            $table->string('startDate');
+            $table->string('endDate');
+            $table->string('food');
+            $table->string('banner');
             $table->timestamps();
         });
     }

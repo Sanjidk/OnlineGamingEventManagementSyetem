@@ -37,7 +37,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">GAME</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">EVENT</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">PRODUCT</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">BLOG</a></li>
@@ -122,36 +121,30 @@
 
 
 
-<!-- Game-->
-<section class="page-section" id="about">
+<!--Event-->
+<section class="page-section bg-light" id="team">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">INFORMATION ABOUT GAME</h2>
+            <h2 class="section-heading text-uppercase">CREATE EVENT</h2>
         </div>
-        <ul class="timeline">
-            <li>
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="" /></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h3 class="subheading">Online Gaming Event</h3>
-                        <h4>2021</h4>
-                    </div>
-                    <div class="timeline-body"><p class="text-muted">
-                            This is totally Gaming event website.
-                            Everyone can join event. And before joining, everyone need to registration & login first.
-                            Then they can join any event by fillup some statement.
-                            Also there has some gaming product that can order anyone for buying.
-                            So, this website is very easy to use and helpful for any users.
-                            Thank You. Stay Safe.
-                        </p></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="pic/sanjid.JPG" alt="" />
+                    <h4>Mahmud Sanjid</h4>
+                    <a class="btn btn-info btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </section>
 
-<br>
-<br>
+
+
+
+
+
 
 
 <!--Event-->
