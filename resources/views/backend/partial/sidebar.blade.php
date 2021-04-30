@@ -44,7 +44,7 @@
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{route('all.eventreg')}}">View Event List</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">View Participator List</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('all.particireg')}}">View Participator List</a></li>
               </ul>
               </div>
           </li>

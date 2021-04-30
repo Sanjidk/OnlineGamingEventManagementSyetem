@@ -60,26 +60,37 @@ Route::get('view/all/post',[AdminController::class,'viewallpost'])->name('all.po
 Route::get('all/post/delete/{id}',[AdminController::class,'allpostdelete'])->name('allrpost.delete');
 
 
+//All event registered
+Route::get('all/event/reg',[AdminController::class,'alleventreg'])->name('all.eventreg');
+
+//event by managers delete by admin
+Route::get('all/event/delete/{id}',[AdminController::class,'alleventregdelete'])->name('alleventreg.delete');
+
+
+
+//All participator registered
+Route::get('all/participate/reg',[AdminController::class,'allparicipate'])->name('all.particireg');
+
+//event reg by participator delete by admin
+Route::get('all/participate/delete/{id}',[AdminController::class,'allparticipatedelete'])->name('allparticipate.delete');
+
+
+
+
+
 
 //admin logout
-
-    Route::get('admin/logout', [UserController::class, 'adminlogout'])->name('admin.logout');
-
-
-
-
-
+Route::get('admin/logout', [UserController::class, 'adminlogout'])->name('admin.logout');
 
 
 //Registration
 
-    Route::get('registration/form', [UserController::class, 'regform'])->name('reg.form');
-    Route::post('registration/store', [UserController::class, 'register'])->name('register');
+Route::get('registration/form', [UserController::class, 'regform'])->name('reg.form');
+Route::post('registration/store', [UserController::class, 'register'])->name('register');
 
 
 
-
-//Login
+// user Login
 
 Route::get('login/form',[UserController::class,'loginForm'])->name('login.form');
 
@@ -91,7 +102,10 @@ Route::get('/logout',[UserController::class,'userLogout'])->name('user.logout');
 
 
 
-//Manager event
+
+
+
+//Manager create event
 
 Route::get('event/form', [ManagersController::class, 'eventform'])->name('event.form');
 Route::post('event/store', [ManagersController::class, 'event'])->name('event');
@@ -99,9 +113,9 @@ Route::post('event/store', [ManagersController::class, 'event'])->name('event');
 
 
 
+// Participator Event Registration
 
-//All event registered
-Route::get('all/event/reg',[AdminController::class,'alleventreg'])->name('all.eventreg');
+Route::get('participator/form', [ParticipatorsController::class, 'partireg'])->name('joinenevt.form');
+Route::post('participator/store', [ParticipatorsController::class, 'joineve'])->name('parti.reg');
 
-//event by managers delete
-Route::get('all/event/delete/{id}',[AdminController::class,'alleventregdelete'])->name('alleventreg.delete');
+

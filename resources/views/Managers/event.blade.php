@@ -169,7 +169,7 @@
         <div class="form-group">
             <label for="food" class="text-light col-sm-3 control-label">Lunch Item</label>
             <div class="col-sm-9">
-                <input type="text" id="food" placeholder="Launch Item" class="form-control" name= "food">
+                <input type="text" id="food" placeholder="Lunch Item" class="form-control" name= "food">
                 <span style="color: #13f3c3">@error('food'){{$message}}@enderror</span>
                 <span class="text-light help-block">* Include all item</span>
 

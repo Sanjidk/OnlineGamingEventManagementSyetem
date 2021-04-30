@@ -16,17 +16,17 @@
 
         *[role="form"] {
             max-width: 530px;
-            padding: 15px;
+            padding: 50px;
             margin: 0 auto;
             border-radius: 0.3em;
-            background-color: #290101;
+            background-color: #4968ef;
         }
 
         *[role="form"] h2 {
             font-family: 'Open Sans' , sans-serif;
-            font-size: 40px;
+            font-size: 30px;
             font-weight: 600;
-            color: #f6f6f6;
+            color: #eaff07;
             margin-top: 5%;
             text-align: center;
             text-transform: uppercase;
@@ -59,9 +59,9 @@
 <div class="container">
     <br>
 
-    <form class="form-horizontal" role="form" action="{{route('register')}}" method="post">
+    <form class="form-horizontal" role="form" action="{{route('parti.reg')}}" method="post">
         @csrf
-        <h2>Registration</h2>
+        <h2>EVENT Registration</h2>
 
         @if(Session()->has('message'))
             <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
@@ -73,9 +73,9 @@
             <label for="type" class="text-light col-sm-3 control-label">Choose Event</label>
             <div class="col-sm-9">
                 <select  type="text" name="type" id="name" class="input-text" placeholder="Fill user name" required pattern="">
-                    <option value="">Choose User Type</option>
-                    <option value="Manager">Manager</option>
-                    <option value="Participator">Participator</option>
+                    <option value="">Choose Event</option>
+                    <option value="Manager">dont know how link</option>
+                    <option value="Participator">dont know how</option>
                 </select>
             </div>
         </div>
@@ -107,15 +107,23 @@
                 <input type="number" id="phone" placeholder="Phone Number" class="form-control " name= "phone">
                 <span style="color: #13f3c3">@error('phone'){{$message}}@enderror</span>
 
-                <span class="text-light help-block">Your phone number won't be disclosed anywhere </span>
             </div>
         </div>
 
         <div class="form-group">
             <label for="payment" class="text-light col-sm-3 control-label">Payment for Event</label>
             <div class="col-sm-9">
-                <input type="text" id="payment" placeholder="Email" class="form-control" name= "payment">
+                <input type="text" id="payment" placeholder="Payment" class="form-control" name= "payment">
                 <span style="color: #13f3c3">@error('payment'){{$message}}@enderror</span>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="photo" class="text-light col-sm-3 control-label">Upload Your Photo</label>
+            <div class="col-sm-9">
+                <input type="text" id="photo" placeholder="Upload Photo" class="form-control" name= "photo">
+                <span style="color: #13f3c3">@error('photo'){{$message}}@enderror</span>
 
             </div>
         </div>
