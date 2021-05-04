@@ -37,13 +37,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('event.form')}}">CREATE EVENT</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('event.list')}}">VIEW EVENT</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('joinenevt.form')}}">REGISTER EVENT</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('event.form')}}">CREATE EVENT FORM</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('event.list')}}">VIEW EVENT LIST</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('joinenevt.form')}}">JOIN EVENT FORM</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('participator.list')}}">PARTICIPATOR LIST</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">PRODUCT</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">BLOG</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">VIEW BLOG</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">GAME DESCRIPTION</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('blog.form')}}">BLOG WRITING</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('blog.list')}}">VIEW BLOG</a></li>
 
                 @auth()
 
@@ -124,42 +124,6 @@
 
 
 
-
-
-
-
-<!--p list-->
-
-
-
-<!-- Blog-->
-<section class="page-section" id="contact">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">BLOG WRITTING</h2>
-            <h3 class="section-subheading text-light">
-                If you are interested to share your experience about any game.
-                You can write there include your name.
-                Thank You</h3>
-        </div>
-        
-
-        <form id="contactForm" name="sentMessage" novalidate="novalidate">
-            <div class="row align-items-stretch mb-5">
-                <div class="col-md-12">
-                    <div class="form-group form-group-textarea mb-md-0">
-                        <textarea class="form-control" id="message" placeholder="Your Experience About Game........." required="required" data-validation-required-message="Please enter a message."></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <div id="success"></div>
-                <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">SUBMIT</button>
-            </div>
-        </form>
-    </div>
-</section>
 
 
 

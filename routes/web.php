@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\ManagersController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\ParticipatorsController;
 use App\Http\Controllers\Frontend\AdminController as FrontendAdmin ;
@@ -103,8 +104,6 @@ Route::get('/logout',[UserController::class,'userLogout'])->name('user.logout');
 
 
 
-
-
 //Manager create event
 
 Route::get('event/form', [ManagersController::class, 'eventform'])->name('event.form');
@@ -127,3 +126,36 @@ Route::post('participator/store', [ParticipatorsController::class, 'joineve'])->
 // Participator list
 
 Route::get('participator/list',[ParticipatorsController::class,'showList'])->name('participator.list');
+
+
+
+// Participator List delete
+
+Route::get('participator/delete/{id}',[ParticipatorsController::class,'deleteParticipator'])->name('participator.delete');
+
+
+//Participator List edit
+
+Route::get('participator/editlist/{id}',[ParticipatorsController::class,'editList'])->name('participator.editlist');
+Route::post('participator/updatelist/{id}',[ParticipatorsController::class,'UpdateList'])->name('participator.updatelist');
+
+
+
+
+
+
+
+//Blog
+
+Route::get('blog/form', [BlogController::class, 'blog'])->name('blog.form');
+Route::post('blog/store', [BlogController::class, 'saveblog'])->name('saving');
+
+
+// Blog list
+
+Route::get('blog/list',[BlogController::class,'showList'])->name('blog.list');
+
+
+// Blog List delete
+
+Route::get('blog/delete/{id}',[BlogController::class,'deleteBlog'])->name('blog.delete');

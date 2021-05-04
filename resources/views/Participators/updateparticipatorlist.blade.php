@@ -46,14 +46,6 @@
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<br>
-
-<a class="nav-link js-scroll-trigger" href="{{route('frontend.master')}}">
-    <button type="submit" class="btn btn-danger">
-        <i class="fas fa-power-off text-light"></i>
-        GO TO DASHBOARD
-    </button>
-</a>
 
 
 <div class="container">
@@ -72,13 +64,14 @@
         <div class="form-group">
             <label for="type" class="text-light col-sm-3 control-label">Choose Event</label>
             <div class="col-sm-9">
-                <select  type="text" name="type" id="type" class="input-text" placeholder="Fill user name" required pattern="">
-                   @foreach($managers as $data)
-                    <option value="{{$data->eventName}}">{{$data->eventName}}</option>
+                <select  type="text" name="eventName" id="eventName" class="input-text" placeholder="Select Event" required pattern="">
+                    @foreach($managers as $data)
+                        <option value="">{{$data->eventName}}</option>
                     @endforeach
                 </select>
             </div>
         </div>
+
 
 
 

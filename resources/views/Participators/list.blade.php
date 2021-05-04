@@ -45,6 +45,8 @@
                             <th scope="col">Number</th>
                             <th scope="col">Payment</th>
                             <th scope="col">Photo</th>
+                            <th scope="col">Action</th>
+
                         </tr>
                         </thead>
 
@@ -58,6 +60,12 @@
                                 <td>{{$data->phone}}</td>
                                 <td>{{$data->payment}}</td>
                                 <td>{{$data->photo}}</td>
+
+                                <td>
+                                    <a class="btn btn-primary" href="{{route('participator.editlist',$data->id)}}">Edit</a>
+                                    <a class="btn btn-danger" href="{{route('participator.delete',$data->id)}}">Delete</a>
+                                    <a class="btn btn-warning" href="{{route('participator.updatelist',$data->id)}}">Update</a>
+                                </td>
 
                             </tr>
                         @endforeach
