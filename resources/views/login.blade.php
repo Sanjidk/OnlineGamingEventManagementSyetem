@@ -71,9 +71,14 @@
                                 LOGIN
                             </button>
                         </div>
+
+                        <span class="text-primary help-block"> *You must need A Registered Account before Login. </span>
+
                         <div id="register-link" class="text-right">
                             <a href="{{route('reg.form')}}" class="text-info">Register here</a>
                         </div>
+
+
                     </form>
                 </div>
             </div>

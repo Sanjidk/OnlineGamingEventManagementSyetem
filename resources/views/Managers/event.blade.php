@@ -48,10 +48,10 @@
 
 <br>
 
-<a class="nav-link js-scroll-trigger" href="{{route('home')}}">
+<a class="nav-link js-scroll-trigger" href="{{route('frontend.master')}}">
     <button type="submit" class="btn btn-danger">
         <i class="fas fa-power-off text-light"></i>
-        GO TO HOME
+        GO TO DASHBOARD
     </button>
 </a>
 
@@ -148,7 +148,7 @@
         </div>
 
         <div class="form-group">
-            <label for="startDate" class="text-light col-sm-3 control-label">Reg Start</label>
+            <label for="startDate" class="text-light col-sm-3 control-label">Registration Start</label>
             <div class="col-sm-9">
                 <input type="date" id="startDate" placeholder="Registration Start" class="form-control " name= "startDate">
                 <span style="color: #13f3c3">@error('startDate'){{$message}}@enderror</span>
@@ -158,7 +158,7 @@
 
 
         <div class="form-group">
-            <label for="endDate" class="text-light col-sm-3 control-label">Reg End</label>
+            <label for="endDate" class="text-light col-sm-3 control-label">Registration End</label>
             <div class="col-sm-9">
                 <input type="date" id="endDate" placeholder="Registration End" class="form-control" name= "endDate">
                 <span style="color: #13f3c3">@error('endDate'){{$message}}@enderror</span>

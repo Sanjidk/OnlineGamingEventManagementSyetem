@@ -23,7 +23,7 @@ class ParticipatorsController extends Controller
     $request->validate([
         'type' => 'required',
         'name' => 'required',
-        'email' => 'required',
+        'email' => 'required|email',
         'phone' => 'required',
         'payment' => 'required',
         'photo' => 'required',
@@ -44,6 +44,13 @@ class ParticipatorsController extends Controller
 }
 
 
+// show participator list
 
+    Public function showList()
+    {
+        $list=Participator::paginate(5);
+        return view('Participators.list',compact('list'));
+
+    }
 
 }

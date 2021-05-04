@@ -141,8 +141,6 @@
                     <img class="mx-auto rounded-circle" src="pic/sanjid.JPG" alt="" />
                     <h4>Mahmud Sanjid</h4>
                     <p class="text-dark ">Designer</p>
-                    <a class="btn btn-danger btn-social mx-2" href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-info btn-social mx-2" href="www.instagram.com"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>

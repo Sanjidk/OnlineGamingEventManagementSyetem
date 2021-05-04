@@ -21,7 +21,7 @@ class ManagersController extends Controller
         $request->validate([
             'orgName' => 'required',
             'manager' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
             'eventName' => 'required',
             'place' => 'required',
@@ -54,6 +54,15 @@ class ManagersController extends Controller
     }
 
 
+
+    // show participator list
+
+    Public function showList()
+    {
+        $list=Manager::paginate(5);
+        return view('Managers.list',compact('list'));
+
+    }
 
 
 }

@@ -37,9 +37,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">EVENT</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('event.form')}}">CREATE EVENT</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('event.list')}}">VIEW EVENT</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('joinenevt.form')}}">REGISTER EVENT</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('participator.list')}}">PARTICIPATOR LIST</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">PRODUCT</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">BLOG</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">VIEW BLOG</a></li>
 
                 @auth()
 
@@ -121,50 +125,10 @@
 
 
 
-<!--Event-->
-<section class="page-section bg-light" id="team">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">CREATE EVENT</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="pic/sanjid.JPG" alt="" />
-                    <h4>Mahmud Sanjid</h4>
-                    <a class="btn btn-info btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 
-
-
-
-
-
-<!--Event-->
-<section class="page-section bg-light" id="team">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">CREATE EVENT</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="pic/sanjid.JPG" alt="" />
-                    <h4>Mahmud Sanjid</h4>
-                    <a class="btn btn-info btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--p list-->
 
 
 
@@ -175,9 +139,10 @@
             <h2 class="section-heading text-uppercase">BLOG WRITTING</h2>
             <h3 class="section-subheading text-light">
                 If you are interested to share your experience about any game.
-                You can write there.
+                You can write there include your name.
                 Thank You</h3>
         </div>
+        
 
         <form id="contactForm" name="sentMessage" novalidate="novalidate">
             <div class="row align-items-stretch mb-5">

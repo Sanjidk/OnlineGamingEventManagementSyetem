@@ -110,6 +110,11 @@ Route::get('/logout',[UserController::class,'userLogout'])->name('user.logout');
 Route::get('event/form', [ManagersController::class, 'eventform'])->name('event.form');
 Route::post('event/store', [ManagersController::class, 'event'])->name('event');
 
+// event list
+
+Route::get('event/list',[ManagersController::class,'showList'])->name('event.list');
+
+
 
 
 
@@ -119,3 +124,6 @@ Route::get('participator/form', [ParticipatorsController::class, 'partireg'])->n
 Route::post('participator/store', [ParticipatorsController::class, 'joineve'])->name('parti.reg');
 
 
+// Participator list
+
+Route::get('participator/list',[ParticipatorsController::class,'showList'])->name('participator.list');
