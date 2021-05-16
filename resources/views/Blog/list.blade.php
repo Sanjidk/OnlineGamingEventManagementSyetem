@@ -23,6 +23,13 @@
 </head>
 <body>
 <section class="ftco-section">
+
+    @if(Session()->has('message'))
+        <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
+    @endif
+
+
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Models\Manager;
 use App\Models\Participator;
 use App\Models\User;
-use App\Models\Order;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -91,6 +91,42 @@ class AdminController extends Controller
     }
 
     // end participator reg view
+
+
+
+
+
+
+
+    public function blogg()
+    {
+
+        $users = Blog::all();
+
+        //dd($users->all());
+
+
+        return view('Admin.blogcontrol',compact('users'));
+
+
+    }
+
+    public function blogdelete($id)
+
+    {
+
+        Blog::find($id)->delete();
+
+        return redirect()->back()->with('message','Blog deleted successfully');
+    }
+
+
+
+
+
+
+
+
 
 
 }

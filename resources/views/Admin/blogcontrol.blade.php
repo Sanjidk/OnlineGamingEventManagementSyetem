@@ -22,12 +22,9 @@
                 <thead>
                 <tr>
                     <th>Sl</th>
-                    <th>User</th>
                     <th>Name</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Birth Day</th>
-                    <th>Mobile</th>
+                    <th>Game Name</th>
+                    <th>Message</th>
                     <th>Created At</th>
                     <th>Action</th>
 
@@ -39,17 +36,14 @@
 
                     <tr>
                         <td>{{$key + 1}}</td>
-                        <td>{{$user->type}}</td>
                         <td>{{$user->name}}</td>
-                        <td>{{$user->address}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->birthDate}}</td>
-                        <td>{{$user->phone}}</td>
+                        <td>{{$user->game}}</td>
+                        <td>{{$user->message}}</td>
                         <td>{{$user->created_at}}</td>
                         <td>
 
 
-                            <a href="{{route('allregistered.delete',$user->id)}}" class="btn btn-danger">Delete</a>
+                            <a href="{{route('blogg.delete',$user->id)}}" class="btn btn-danger">Delete</a>
 
                         </td>
                     </tr>

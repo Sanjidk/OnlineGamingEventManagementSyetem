@@ -51,7 +51,8 @@
 <div class="container">
     <br>
 
-    <form class="form-horizontal" role="form" action="{{route('parti.reg')}}" method="post">
+    <form class="form-horizontal" role="form" action="{{route('participator.updatelist','$participators->id')}}" method="post">
+        @method('PUT')
         @csrf
         <h2>EVENT Registration</h2>
 
@@ -60,13 +61,12 @@
         @endif
 
 
-
         <div class="form-group">
             <label for="type" class="text-light col-sm-3 control-label">Choose Event</label>
             <div class="col-sm-9">
-                <select  type="text" name="eventName" id="eventName" class="input-text" placeholder="Select Event" required pattern="">
+                <select  type="text" name="type" id="type" class="input-text" placeholder="Event name">
                     @foreach($managers as $data)
-                        <option value="">{{$data->eventName}}</option>
+                        <option value="{{$data->eventName}}">{{$data->eventName}}</option>
                     @endforeach
                 </select>
             </div>
@@ -75,10 +75,11 @@
 
 
 
+
         <div class="form-group">
             <label for="name" class="text-light col-sm-3 control-label">Participator Name</label>
             <div class="col-sm-9">
-                <input type="text" id="name" placeholder="User Name" class="form-control" name= "name">
+                <input type="text" id="name" placeholder="User Name" class="form-control" name= "name" value="{{$participators->name}}" >
                 <span style="color: #13f3c3">@error('name'){{$message}}@enderror</span>
             </div>
         </div>
@@ -87,7 +88,7 @@
         <div class="form-group">
             <label for="email" class="text-light col-sm-3 control-label">Participator Email</label>
             <div class="col-sm-9">
-                <input type="email" id="email" placeholder="Email" class="form-control" name= "email">
+                <input type="email" id="email" placeholder="Email" class="form-control" name= "email" value="{{$participators->email}}">
                 <span style="color: #13f3c3">@error('email'){{$message}}@enderror</span>
 
             </div>
@@ -97,7 +98,7 @@
         <div class="form-group">
             <label for="phone" class="text-light col-sm-3 control-label">Phone Number</label>
             <div class="col-sm-9">
-                <input type="number" id="phone" placeholder="Phone Number" class="form-control " name= "phone">
+                <input type="number" id="phone" placeholder="Phone Number" class="form-control " name= "phone" value="{{$participators->phone}}">
                 <span style="color: #13f3c3">@error('phone'){{$message}}@enderror</span>
 
             </div>
@@ -106,7 +107,7 @@
         <div class="form-group">
             <label for="payment" class="text-light col-sm-3 control-label">Payment for Event</label>
             <div class="col-sm-9">
-                <input type="text" id="payment" placeholder="Payment" class="form-control" name= "payment">
+                <input type="text" id="payment" placeholder="Payment" class="form-control" name= "payment" value="{{$participators->payment}}">
                 <span style="color: #13f3c3">@error('payment'){{$message}}@enderror</span>
 
             </div>
@@ -115,7 +116,7 @@
         <div class="form-group">
             <label for="photo" class="text-light col-sm-3 control-label">Upload Your Photo</label>
             <div class="col-sm-9">
-                <input type="text" id="photo" placeholder="Upload Photo" class="form-control" name= "photo">
+                <input type="text" id="photo" placeholder="Upload Photo" class="form-control" name= "photo" value="{{$participators->photo}}">
                 <span style="color: #13f3c3">@error('photo'){{$message}}@enderror</span>
 
             </div>

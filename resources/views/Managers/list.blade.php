@@ -25,6 +25,13 @@
 </head>
 <body>
 <section class="ftco-section">
+
+
+    @if(Session()->has('message'))
+        <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
+    @endif
+
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
@@ -41,18 +48,21 @@
                         <thead class="thead-primary">
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Maximum Participators</th>
+                            <th scope="col">Event Fee</th>
+                            <th scope="col">Admin Fee</th>
                             <th scope="col">Organization Name</th>
                             <th scope="col">Managers Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone Number</th>
                             <th scope="col">Event Name</th>
                             <th scope="col">Event Location</th>
-                            <th scope="col">Event Fee</th>
                             <th scope="col">Event Date</th>
                             <th scope="col">Registration Start</th>
                             <th scope="col">Registration End</th>
                             <th scope="col">Lunch Item</th>
                             <th scope="col">Event Banner</th>
+                            <th scope="col">Action</th>
 
                         </tr>
                         </thead>
@@ -61,18 +71,31 @@
                         @foreach($list as $key=>$data )
                             <tr>
                                 <th scope="row">{{$key+1}}</th>
+
+                                <td>{{$data->contain}}</td>
+                                <td>{{$data->fee}}</td>
+                                <td>{{$data->cost}}</td>
                                 <td>{{$data->orgName}}</td>
                                 <td>{{$data->manager}}</td>
                                 <td>{{$data->email}}</td>
                                 <td>{{$data->phone}}</td>
                                 <td>{{$data->eventName}}</td>
                                 <td>{{$data->place}}</td>
-                                <td>{{$data->fee}}</td>
                                 <td>{{$data->eventDate}}</td>
                                 <td>{{$data->startDate}}</td>
                                 <td>{{$data->endDate}}</td>
                                 <td>{{$data->food}}</td>
-                                <td>{{$data->banner}}</td>
+                                <td>
+
+                                    <img style="width: 300px;" src="{{url('/photo/banner/',$data->banner)}}" alt="Image not found">
+
+                                </td>
+
+                                <td>
+                                    <a class="btn btn-danger" href="{{route('event.delete',$data->id)}}">Delete</a>
+                                </td>
+
+
 
                             </tr>
                         @endforeach

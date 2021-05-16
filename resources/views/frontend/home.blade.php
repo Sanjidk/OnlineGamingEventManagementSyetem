@@ -38,18 +38,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('login.form')}}">LOGIN</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">PRODUCT</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">GAME</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">ABOUT</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">ADMIN</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
+
 <!-- Masthead-->
 <header class="masthead">
 
     <div class="container">
-        <div style="color: #ffffff" class="masthead-subheading">Welcome To Online Our Gaming Event</div>
+
+        <div style="color: #ffffff" class="masthead-subheading text-right">Welcome To Our Online Gaming Event</div>
         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">More Info</a>
     </div>
 </header>
@@ -58,38 +61,35 @@
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
-            <h1 class="section-heading text-uppercase">PRODUCT DEMO</h1>
-            <h3 class="section-subheading text-dark">
-                If you want to buy any product, then REGISTER and then ORDER. Thank You
-            </h3>
+            <h1 class="section-heading text-uppercase">GAME NAME</h1>
         </div>
         <div class="row">
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="portfolio-item">
-                        <img class="img-fluid" src="{{asset("home")}}/assets/img/portfolio/tshirt.png" alt="" />
+                        <img class="img-fluid" src="{{asset("home")}}/assets/img/nfs.jpg" alt="" />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">JERSEY</div>
+                        <div class="portfolio-caption-heading">NEED FOR SPEED</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="portfolio-item">
-                    <img class="img-fluid" src="{{asset("home")}}/assets/img/portfolio/ring.jpg" alt="" />
+                    <img class="img-fluid" src="{{asset("home")}}/assets/img/pubg.jpg" alt="" />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">GaminG RinG</div>
+                        <div class="portfolio-caption-heading">PLAYER UNKNOWN BATTLE GROUND</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="portfolio-item">
-                        <img class="img-fluid" src="{{asset("home")}}/assets/img/portfolio/cap.jpg" alt="" />
+                        <img class="img-fluid" src="{{asset("home")}}/assets/img/fire.jpg" alt="" />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">CAP</div>
+                        <div class="portfolio-caption-heading">FREE FIRE</div>
                     </div>
                 </div>
             </div>
@@ -117,10 +117,11 @@
                     <div class="timeline-body"><p class="text-muted">
                             This is totally Gaming event website.
                             Everyone can join event. And before joining, everyone need to registration & login first.
-                            Then they can join any event by fillup some statement.
-                            Also there has some gaming product that can order anyone for buying.
-                            So, this website is very easy to use and helpful for any users.
-                            Thank You. Stay Safe.
+                            Then they can join any event by fill up some statement.
+                            Also there has a BLOG option that any user can write BLOG about any game.
+                            So, this website is very easy to use and helpful for users.
+
+                            Thank You. Stay Home, Stay Safe.
                         </p></div>
                 </div>
             </li>

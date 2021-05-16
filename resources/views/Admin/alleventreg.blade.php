@@ -8,8 +8,9 @@
                     @if(Session::has('message'))
                         <div class="alert alert-success"> {{ Session::get('message') }}</div>
                     @endif
-                    <h2 >
 
+
+                    <h2 >
                         All Registered manager
                         <span style="color:green ">{{$managers->count()}}</span>
 

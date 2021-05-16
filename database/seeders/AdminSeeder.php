@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-
-class UserTableSeeder extends Seeder
+class AdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,14 +15,15 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        DB::table('users')->insert([
             'type'  => 'admin',
-            'name'  =>  'Sanjid',
+            'name'  =>  'admin',
             'address'  =>  'Dhaka',
             'email'  =>  'admin@gmail.com',
             'password'  =>  bcrypt('123456'),
             'birthDate'  =>  '02/08/2021',
             'phone'  =>  '01843066666',
+
 
         ]);
     }

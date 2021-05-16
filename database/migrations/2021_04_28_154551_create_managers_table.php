@@ -15,13 +15,15 @@ class CreateManagersTable extends Migration
     {
         Schema::create('managers', function (Blueprint $table) {
             $table->id();
+            $table->string('contain');
+            $table->string('fee');
+            $table->string('cost');
             $table->string('orgName');
             $table->string('manager');
             $table->string('email');
             $table->string('phone');
             $table->string('eventName');
             $table->string('place');
-            $table->string('fee');
             $table->string('eventDate');
             $table->string('startDate');
             $table->string('endDate');

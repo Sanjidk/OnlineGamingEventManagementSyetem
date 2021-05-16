@@ -9,4 +9,5 @@ class Manager extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
 }

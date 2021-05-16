@@ -72,7 +72,7 @@
         <div class="form-group">
             <label for="type" class="text-light col-sm-3 control-label">Choose Event</label>
             <div class="col-sm-9">
-                <select  type="text" name="type" id="type" class="input-text" placeholder="Fill user name" required pattern="">
+                <select  type="text" name="type" id="type" class="input-text" placeholder="Event name" required pattern="">
                    @foreach($managers as $data)
                     <option value="{{$data->eventName}}">{{$data->eventName}}</option>
                     @endforeach
@@ -120,10 +120,9 @@
         </div>
 
         <div class="form-group">
-            <label for="photo" class="text-light col-sm-3 control-label">Upload Your Photo</label>
+            <label for="photo" class="text-light col-sm-3 control-label">Your Photo</label>
             <div class="col-sm-9">
-                <input type="text" id="photo" placeholder="Upload Photo" class="form-control" name= "photo">
-                <span style="color: #13f3c3">@error('photo'){{$message}}@enderror</span>
+                <input type="file" id="photo"  class="form-control" name= "photo">
 
             </div>
         </div>

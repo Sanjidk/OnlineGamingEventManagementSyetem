@@ -59,7 +59,11 @@
                                 <td>{{$data->email}}</td>
                                 <td>{{$data->phone}}</td>
                                 <td>{{$data->payment}}</td>
-                                <td>{{$data->photo}}</td>
+                                <td>
+
+                                    <img style="width: 200px;" src="{{url('/photo/food/',$data->photo)}}" alt="Image not found">
+
+                                </td>
 
                                 <td>
                                     <a class="btn btn-primary" href="{{route('participator.editlist',$data->id)}}">Edit</a>

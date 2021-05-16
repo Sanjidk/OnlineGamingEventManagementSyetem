@@ -1,9 +1,11 @@
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background: #23f1f1">
         <ul class="nav">
           <li class="nav-item nav-profile">
             <div class="nav-link">
+
+
               <div class="profile-name">
                 <p class="name">
                   Mahmud Sanjid
@@ -32,9 +34,6 @@
           </li>
 
 
-
-
-
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="far fa-compass menu-icon"></i>
@@ -50,22 +49,6 @@
           </li>
 
 
-
-
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
-              <i class="fas fa-clipboard-list menu-icon"></i>
-              <span class="menu-title">PRODUCT</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-advanced">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dragula.html">Product Details</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/clipboard.html">Order Product</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/context-menu.html">Payment</a></li>
-              </ul>
-            </div>
-          </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="fab fa-wpforms menu-icon"></i>
@@ -74,7 +57,7 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Writer</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('all.blogg')}}">Writer</a></li>
               </ul>
             </div>
           </li>

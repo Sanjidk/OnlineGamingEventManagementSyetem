@@ -6,7 +6,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\ParticipatorsController;
-use App\Http\Controllers\Frontend\AdminController as FrontendAdmin ;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +24,29 @@ Route::get('/', function ()
 })->name('home');
 
 
+// admin login
+Route::get('/admin', function ()
+{
+    return view('master');
+})->name('master');
+
+
+//admin login
+
+Route::get('admin/login/form',[UserController::class,'adminloginform'])->name('adminlogin.form');
+Route::post('admin/login/process',[UserController::class,'adminloginprocess'])->name('adminlogin.process');
+
+
+//All backend blog
+Route::get('all/blog/list',[AdminController::class,'blogg'])->name('all.blogg');
+
+//backend blog delete
+Route::get('all/blog/delete/{id}',[AdminController::class,'blogdelete'])->name('blogg.delete');
+
+
+
+
+Route::group(['middleware' => 'auth'],function(){
 
 // after log in user
 Route::get('/master', function ()
@@ -33,19 +55,10 @@ Route::get('/master', function ()
 })->name('frontend.master');
 
 
-// admin login
-Route::get('/admin', function ()
-{
-    return view('master');
-})->name('master');
+
 
 
 ///Backend route group
-//admin login
-
-Route::get('admin/login/form',[UserController::class,'adminloginform'])->name('adminlogin.form');
-Route::post('admin/login/process',[UserController::class,'adminloginprocess'])->name('adminlogin.process');
-
 
 //All registered
 Route::get('all/registered/person',[AdminController::class,'allregistered'])->name('all.registered');
@@ -80,25 +93,7 @@ Route::get('all/participate/delete/{id}',[AdminController::class,'allparticipate
 
 
 
-//admin logout
-Route::get('admin/logout', [UserController::class, 'adminlogout'])->name('admin.logout');
 
-
-//Registration
-
-Route::get('registration/form', [UserController::class, 'regform'])->name('reg.form');
-Route::post('registration/store', [UserController::class, 'register'])->name('register');
-
-
-
-// user Login
-
-Route::get('login/form',[UserController::class,'loginForm'])->name('login.form');
-
-//Login Authentication
-
-Route::post('login/process',[UserController::class,'userLogin'])->name('user.login');
-Route::get('/logout',[UserController::class,'userLogout'])->name('user.logout');
 
 
 
@@ -113,6 +108,9 @@ Route::post('event/store', [ManagersController::class, 'event'])->name('event');
 
 Route::get('event/list',[ManagersController::class,'showList'])->name('event.list');
 
+// event delete
+
+Route::get('event/delete/{id}',[ManagersController::class,'eventdelete'])->name('event.delete');
 
 
 
@@ -137,9 +135,7 @@ Route::get('participator/delete/{id}',[ParticipatorsController::class,'deletePar
 //Participator List edit
 
 Route::get('participator/editlist/{id}',[ParticipatorsController::class,'editList'])->name('participator.editlist');
-Route::post('participator/updatelist/{id}',[ParticipatorsController::class,'UpdateList'])->name('participator.updatelist');
-
-
+Route::put('participator/updatelist/{id}',[ParticipatorsController::class,'UpdateList'])->name('participator.updatelist');
 
 
 
@@ -159,3 +155,42 @@ Route::get('blog/list',[BlogController::class,'showList'])->name('blog.list');
 // Blog List delete
 
 Route::get('blog/delete/{id}',[BlogController::class,'deleteBlog'])->name('blog.delete');
+
+
+
+
+
+
+
+Route::get('checkout/form/{id}',[ManagersController::class,'checkoutForm'])->name('checkout.form');
+
+
+
+});
+
+
+
+
+
+//admin logout
+Route::get('admin/logout', [UserController::class, 'adminlogout'])->name('admin.logout');
+
+
+//Registration
+
+Route::get('registration/form', [UserController::class, 'regform'])->name('reg.form');
+Route::post('registration/store', [UserController::class, 'register'])->name('register');
+
+
+
+// user Login
+
+Route::get('login/form',[UserController::class,'loginForm'])->name('login.form');
+
+//Login Authentication
+
+Route::post('login/process',[UserController::class,'userLogin'])->name('user.login');
+Route::get('/logout',[UserController::class,'userLogout'])->name('user.logout');
+
+
+

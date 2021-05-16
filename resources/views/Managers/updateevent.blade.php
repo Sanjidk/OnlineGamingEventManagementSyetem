@@ -14,7 +14,6 @@
             background-size: cover;
         }
 
-
         *[role="form"] {
             max-width: 550px;
             padding: 50px;
@@ -59,38 +58,15 @@
 
 <div class="container">
 
-    <form class="form-horizontal" role="form" action="{{route('event',$ad->id)}}" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal" role="form" action="{{route('event')}}" method="post" enctype="multipart/form-data">
 
 
         @csrf
-
         <h2>CREATE EVENT</h2>
 
         @if(Session()->has('message'))
             <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
         @endif
-
-
-        <div class="form-group">
-            <label for="contain" class="text-light col-sm-3 control-label">Maximum Participators</label>
-            <div class="col-sm-9">
-                <input type="number" id="contain" class="form-control" name= "contain" value="{{$ad->contain}}">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fee" class="text-light col-sm-3 control-label">Event Fee</label>
-            <div class="col-sm-9">
-                <input type="number" id="fee" class="form-control" name= "fee" value="{{$ad->fee}}">
-
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="cost" class="text-light col-sm-3 control-label">Admin Fee</label>
-            <div class="col-sm-9">
-                <input type="number" id="cost" class="form-control" name= "cost" value="{{$ad->contain*$ad->fee*0.05}}">
-            </div>
-        </div>
 
 
         <div class="form-group">
@@ -153,7 +129,14 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="fee" class="text-light col-sm-3 control-label">Event Fee</label>
+            <div class="col-sm-9">
+                <input type="text" id="fee" placeholder="Event Fee" class="form-control" name= "fee">
+                <span style="color: #13f3c3">@error('fee'){{$message}}@enderror</span>
 
+            </div>
+        </div>
 
         <div class="form-group">
             <label for="eventDate" class="text-light col-sm-3 control-label">Event Date</label>
