@@ -43,7 +43,6 @@
                             <th scope="col">Participator Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Number</th>
-                            <th scope="col">Payment</th>
                             <th scope="col">Photo</th>
                             <th scope="col">Action</th>
 
@@ -58,7 +57,6 @@
                                 <td>{{$data->name}}</td>
                                 <td>{{$data->email}}</td>
                                 <td>{{$data->phone}}</td>
-                                <td>{{$data->payment}}</td>
                                 <td>
 
                                     <img style="width: 200px;" src="{{url('/photo/food/',$data->photo)}}" alt="Image not found">

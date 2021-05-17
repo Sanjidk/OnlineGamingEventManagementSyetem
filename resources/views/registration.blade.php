@@ -48,10 +48,10 @@
 
 <br>
 
-<a class="nav-link js-scroll-trigger" href="{{route('home')}}">
+<a class="nav-link js-scroll-trigger" href="{{route('login.form')}}">
     <button type="submit" class="btn btn-danger">
         <i class="fas fa-power-off text-light"></i>
-        GO TO HOME
+        GO TO LOG IN
     </button>
 </a>
 
@@ -151,7 +151,7 @@
         </div>
 
         <div id="register-link" class="text-right">
-            <a href="{{route('login.form')}}" class="text-primary">Go Back to Login</a>
+            <a href="{{route('home')}}" class="text-primary">Go Back to Home</a>
         </div>
 
 

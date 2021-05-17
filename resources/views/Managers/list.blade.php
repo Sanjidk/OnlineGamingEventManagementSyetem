@@ -50,7 +50,6 @@
                             <th scope="col">#</th>
                             <th scope="col">Maximum Participators</th>
                             <th scope="col">Event Fee</th>
-                            <th scope="col">Admin Fee</th>
                             <th scope="col">Organization Name</th>
                             <th scope="col">Managers Name</th>
                             <th scope="col">Email</th>
@@ -74,7 +73,6 @@
 
                                 <td>{{$data->contain}}</td>
                                 <td>{{$data->fee}}</td>
-                                <td>{{$data->cost}}</td>
                                 <td>{{$data->orgName}}</td>
                                 <td>{{$data->manager}}</td>
                                 <td>{{$data->email}}</td>

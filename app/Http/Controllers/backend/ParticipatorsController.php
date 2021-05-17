@@ -27,7 +27,6 @@ class ParticipatorsController extends Controller
         'name' => 'required',
         'email' => 'required|email',
         'phone' => 'required',
-        'payment' => 'required',
         'photo' => 'required',
     ]);
 
@@ -50,7 +49,6 @@ class ParticipatorsController extends Controller
     $participators->name = $request->name;
     $participators->email = $request->email;
     $participators->phone = $request->phone;
-    $participators->payment = $request->payment;
     $participators->photo = $user_file;
     $participators->save();
 
@@ -94,7 +92,6 @@ class ParticipatorsController extends Controller
             'name'=>$request->participator_name,
             'email'=>$request->participator_email,
             'phone'=>$request->participator_number,
-            'payment'=>$request->participator_pay,
         ]);
         return redirect(route('Participators.list'))->with('message', 'Participator Updated sucessfully');
     }

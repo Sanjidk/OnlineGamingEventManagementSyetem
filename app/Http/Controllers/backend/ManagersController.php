@@ -19,23 +19,12 @@ class ManagersController extends Controller
 
 
 
-    public function checkoutForm($id)
-    {
-        $ad = Manager::find($id);
-
-        return view('Managers.event',compact('ad'));
-
-    }
-
-
-
     public function event(Request $request)
     {
 
         $request->validate([
             'contain' => 'required',
             'fee' => 'required',
-            'cost' => 'required',
             'orgName' => 'required',
             'manager' => 'required',
             'email' => 'required|email',
@@ -67,7 +56,6 @@ class ManagersController extends Controller
         $managers = new Manager();
         $managers->contain = $request->contain;
         $managers->fee = $request->fee;
-        $managers->cost = $request->cost;
         $managers->orgName = $request->orgName;
         $managers->manager = $request->manager;
         $managers->email = $request->email;
@@ -82,7 +70,7 @@ class ManagersController extends Controller
         $managers->save();
 
 
-        return redirect()->back()->with('message', 'Event Create Sucessfully ');
+        return redirect()->back()->with('message', 'Request Pending, go to payment for Confirm');
     }
 
 
@@ -105,6 +93,9 @@ class ManagersController extends Controller
         return view('Managers.list',compact('list'));
 
     }
+
+
+
 
 
 

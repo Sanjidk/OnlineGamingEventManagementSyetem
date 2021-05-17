@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateParticipatorsTable extends Migration
+class CreatePpaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateParticipatorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('participators', function (Blueprint $table) {
+        Schema::create('ppayments', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
             $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('photo');
+            $table->string('contact');
+            $table->string('fees');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateParticipatorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('participators');
+        Schema::dropIfExists('ppayments');
     }
 }

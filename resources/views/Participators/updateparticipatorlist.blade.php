@@ -104,14 +104,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="payment" class="text-light col-sm-3 control-label">Payment for Event</label>
-            <div class="col-sm-9">
-                <input type="text" id="payment" placeholder="Payment" class="form-control" name= "payment" value="{{$participators->payment}}">
-                <span style="color: #13f3c3">@error('payment'){{$message}}@enderror</span>
 
-            </div>
-        </div>
 
         <div class="form-group">
             <label for="photo" class="text-light col-sm-3 control-label">Upload Your Photo</label>

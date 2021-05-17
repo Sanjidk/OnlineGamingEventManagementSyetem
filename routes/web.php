@@ -7,6 +7,12 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\ParticipatorsController;
 
+
+use App\Http\Controllers\frontend\ManagersController as FrontendManagers ;
+use App\Http\Controllers\frontend\ParticipatorsController as FrontendParticipators ;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -159,13 +165,6 @@ Route::get('blog/delete/{id}',[BlogController::class,'deleteBlog'])->name('blog.
 
 
 
-
-
-
-Route::get('checkout/form/{id}',[ManagersController::class,'checkoutForm'])->name('checkout.form');
-
-
-
 });
 
 
@@ -194,3 +193,16 @@ Route::get('/logout',[UserController::class,'userLogout'])->name('user.logout');
 
 
 
+//Manager payment for event
+
+Route::get('payment/form', [FrontendManagers::class, 'mcheckout'])->name('mpayment.form');
+Route::post('payment/store', [FrontendManagers::class, 'mpay'])->name('m.payment');
+
+
+
+
+
+//Participator payment for event
+
+Route::get('payments/form', [FrontendParticipators::class, 'payments'])->name('ppayment.form');
+Route::post('payments/store', [FrontendParticipators::class, 'ppay'])->name('p.payment');

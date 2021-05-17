@@ -57,9 +57,17 @@
 </a>
 
 
+<a class="nav-link js-scroll-trigger" href="{{route('mpayment.form')}}">
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-power-off text-light"></i>
+        Go For Payment
+    </button>
+</a>
+
+
 <div class="container">
 
-    <form class="form-horizontal" role="form" action="{{route('event',$ad->id)}}" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal" role="form" action="{{route('event')}}" method="post" enctype="multipart/form-data">
 
 
         @csrf
@@ -74,24 +82,20 @@
         <div class="form-group">
             <label for="contain" class="text-light col-sm-3 control-label">Maximum Participators</label>
             <div class="col-sm-9">
-                <input type="number" id="contain" class="form-control" name= "contain" value="{{$ad->contain}}">
+                <input type="number" id="contain" placeholder="Total Number" class="form-control" name= "contain">
+                <span style="color: #13f3c3">@error('contain'){{$message}}@enderror</span>
+
             </div>
         </div>
 
         <div class="form-group">
             <label for="fee" class="text-light col-sm-3 control-label">Event Fee</label>
             <div class="col-sm-9">
-                <input type="number" id="fee" class="form-control" name= "fee" value="{{$ad->fee}}">
+                <input type="number" id="fee" placeholder="BDT" class="form-control" name= "fee">
+                <span style="color: #13f3c3">@error('fee'){{$message}}@enderror</span>
 
             </div>
         </div>
-        <div class="form-group">
-            <label for="cost" class="text-light col-sm-3 control-label">Admin Fee</label>
-            <div class="col-sm-9">
-                <input type="number" id="cost" class="form-control" name= "cost" value="{{$ad->contain*$ad->fee*0.05}}">
-            </div>
-        </div>
-
 
         <div class="form-group">
             <label for="orgName" class="text-light col-sm-3 control-label">Organization Name</label>
@@ -214,7 +218,7 @@
 
 
         <div class= "col-sm-9 col-sm-offset-3">
-            <button type="submit" class="btn btn-danger btn-block">CREATE EVENT</button>
+            <button type="submit" class="btn btn-danger btn-block">SUBMIT FOR PAYMENT</button>
         </div>
 
     </form> <!-- /form -->

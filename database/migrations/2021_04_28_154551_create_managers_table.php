@@ -17,7 +17,6 @@ class CreateManagersTable extends Migration
             $table->id();
             $table->string('contain');
             $table->string('fee');
-            $table->string('cost');
             $table->string('orgName');
             $table->string('manager');
             $table->string('email');
