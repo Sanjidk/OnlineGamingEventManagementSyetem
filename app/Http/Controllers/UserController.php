@@ -60,7 +60,7 @@ class UserController extends Controller
             $request->session()->regenerate();
 
             if (auth()->user()->type == 'Participator' || auth()->user()->type == 'Manager') {
-                return redirect()->route('frontend.master')->with('success', 'User Login Successfully.');
+                return redirect()->route('frontend.Others.master')->with('success', 'User Login Successfully.');
             }
         } else {
             return back()->withErrors([

@@ -6,10 +6,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\ParticipatorsController;
+use App\Http\Controllers\PaymentController;
 
 
 use App\Http\Controllers\frontend\ManagersController as FrontendManagers ;
-use App\Http\Controllers\frontend\ParticipatorsController as FrontendParticipators ;
 
 
 
@@ -26,7 +26,7 @@ use App\Http\Controllers\frontend\ParticipatorsController as FrontendParticipato
 // home blade
 Route::get('/', function ()
 {
-    return view('frontend.home');
+    return view('frontend.Others.home');
 })->name('home');
 
 
@@ -57,8 +57,8 @@ Route::group(['middleware' => 'auth'],function(){
 // after log in user
 Route::get('/master', function ()
 {
-    return view('frontend.master');
-})->name('frontend.master');
+    return view('frontend.Others.master');
+})->name('frontend.Others.master');
 
 
 
@@ -88,18 +88,6 @@ Route::get('all/event/delete/{id}',[AdminController::class,'alleventregdelete'])
 
 
 
-//All participator registered
-Route::get('all/participate/reg',[AdminController::class,'allparicipate'])->name('all.particireg');
-
-//event reg by participator delete by admin
-Route::get('all/participate/delete/{id}',[AdminController::class,'allparticipatedelete'])->name('allparticipate.delete');
-
-
-
-
-
-
-
 
 
 
@@ -121,27 +109,7 @@ Route::get('event/delete/{id}',[ManagersController::class,'eventdelete'])->name(
 
 
 
-// Participator Event Registration
 
-Route::get('participator/form', [ParticipatorsController::class, 'partireg'])->name('joinenevt.form');
-Route::post('participator/store', [ParticipatorsController::class, 'joineve'])->name('parti.reg');
-
-
-// Participator list
-
-Route::get('participator/list',[ParticipatorsController::class,'showList'])->name('participator.list');
-
-
-
-// Participator List delete
-
-Route::get('participator/delete/{id}',[ParticipatorsController::class,'deleteParticipator'])->name('participator.delete');
-
-
-//Participator List edit
-
-Route::get('participator/editlist/{id}',[ParticipatorsController::class,'editList'])->name('participator.editlist');
-Route::put('participator/updatelist/{id}',[ParticipatorsController::class,'UpdateList'])->name('participator.updatelist');
 
 
 
@@ -193,10 +161,6 @@ Route::get('/logout',[UserController::class,'userLogout'])->name('user.logout');
 
 
 
-//Manager payment for event
-
-Route::get('payment/form', [FrontendManagers::class, 'mcheckout'])->name('mpayment.form');
-Route::post('payment/store', [FrontendManagers::class, 'mpay'])->name('m.payment');
 
 
 
@@ -204,5 +168,18 @@ Route::post('payment/store', [FrontendManagers::class, 'mpay'])->name('m.payment
 
 //Participator payment for event
 
-Route::get('payments/form', [FrontendParticipators::class, 'payments'])->name('ppayment.form');
-Route::post('payments/store', [FrontendParticipators::class, 'ppay'])->name('p.payment');
+Route::get('payments/form/{id}', [PaymentController::class, 'payments'])->name('payment.form');
+Route::post('/user/payment',[PaymentController::class,'userPayment'])->name('user.payment.new');
+
+
+
+
+Route::get('user/payment/requests',[PaymentController::class,'userPaymentRequests'])->name('user.payment.requests');
+
+
+
+Route::get('all/event/view',[FrontendManagers::class,'eventView'])->name('all.event.view');
+
+
+
+Route::get('all/req/view',[AdminController::class,'managerRequests'])->name('all.req.view');

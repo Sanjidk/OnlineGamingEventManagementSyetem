@@ -26,9 +26,15 @@
             </a>
             <div class="collapse" id="page-layouts">
               <ul class="nav flex-column sub-menu">
+
                 <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="{{route('all.registered')}}">VIEW USER LIST
                     </a>
                 </li>
+
+                  <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="{{route('all.req.view')}}">VIEW EVENT REQUEST
+                      </a>
+                  </li>
+
               </ul>
             </div>
           </li>

@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Models\Manager;
-use App\Models\Participator;
+use App\Models\Event;
 use App\Models\User;
 use App\Models\Blog;
 use Illuminate\Http\Request;
@@ -21,7 +20,7 @@ class AdminController extends Controller
         //dd($users->all());
 
 
-        return view('Admin.allregistered',compact('users'));
+        return view('backend.Admin.allregistered',compact('users'));
 
 
     }
@@ -44,12 +43,12 @@ class AdminController extends Controller
     public function alleventreg()
     {
 
-        $managers = Manager::all();
+        $events = Event::all();
 
         //dd($managers->all());
 
 
-        return view('Admin.alleventreg',compact('managers'));
+        return view('backend.Admin.alleventreg',compact('events'));
 
     }
 
@@ -57,41 +56,12 @@ class AdminController extends Controller
 
     {
 
-        Manager::find($id)->delete();
+        Event::find($id)->delete();
 
         return redirect()->back()->with('message','Event deleted successfully');
     }
 
     // end create event view
-
-
-
-
-    // start participator reg view
-
-    public function allparicipate()
-    {
-
-        $participators = Participator::all();
-
-        //dd($participators->all());
-
-
-        return view('Admin.allparticireg',compact('participators'));
-
-    }
-
-    public function allparticipatedelete($id)
-
-    {
-
-        Participator::find($id)->delete();
-
-        return redirect()->back()->with('message','Participator deleted successfully');
-    }
-
-    // end participator reg view
-
 
 
 
@@ -106,7 +76,7 @@ class AdminController extends Controller
         //dd($users->all());
 
 
-        return view('Admin.blogcontrol',compact('users'));
+        return view('backend.Admin.blogcontrol',compact('users'));
 
 
     }
@@ -119,6 +89,17 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message','Blog deleted successfully');
     }
+
+
+
+    public function managerRequests()
+    {
+        $events=Event::all();
+        return view('backend.Admin.allrequest',compact('events'));
+    }
+
+
+
 
 
 

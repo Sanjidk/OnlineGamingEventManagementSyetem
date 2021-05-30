@@ -13,7 +13,7 @@ class BlogController extends Controller
     public function blog()
     {
 
-        return view('Blog.blog');
+        return view('frontend.Blog.blog');
 
     }
 
@@ -43,7 +43,7 @@ class BlogController extends Controller
     {
         $list=Blog::paginate(5);
 
-        return view('Blog.list',compact('list'));
+        return view('frontend.Blog.list',compact('list'));
 
     }
 

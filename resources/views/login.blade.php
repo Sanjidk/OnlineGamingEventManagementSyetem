@@ -1,37 +1,46 @@
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title> LOGIN FORM </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #355ce9;
+            height: 100vh;
+        }
+
+        #login .container #login-row #login-column #login-box {
+            margin-top: 120px;
+            max-width: 600px;
+            height: 360px;
+            border: 1px solid #f30f0f;
+            background-color: #f6f2f8;
+        }
+        #login .container #login-row #login-column #login-box #login-form {
+            padding: 20px;
+        }
+        #login .container #login-row #login-column #login-box #login-form #register-link {
+            margin-top: -85px;
+        }    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</head>
 
 <body>
-<style>
-
-    body {
-        background: url('https://wallpaperaccess.com/full/2541966.jpg') fixed;
-        background-size: cover;
-    }
-    #login .container #login-row #login-column #login-box {
-        margin-top: 170px;
-        max-width: 600px;
-        height: 370px;
-        border: 4px solid #08e1fa;
-        background-color: #dbdbdb;
-    }
-    #login .container #login-row #login-column #login-box #login-form {
-        padding: 20px;
-    }
-    #login .container #login-row #login-column #login-box #login-form #register-link {
-        margin-top: -85px;
-    }
-</style>
-
-
-    <a class="nav-link js-scroll-trigger" href="{{route('home')}}">
-            <button type="submit" class="btn btn-danger">
-                <i class="fas fa-power-off text-light"></i>
-                GO TO HOME
-            </button>
-        </a>
+<a class="nav-link js-scroll-trigger" href="{{route('home')}}">
+    <button type="submit" class="btn btn-danger">
+        <i class="fas fa-power-off text-light"></i>
+        GO TO HOME
+    </button>
+</a>
 
 
 
@@ -72,8 +81,6 @@
                             </button>
                         </div>
 
-                        <span class="text-primary help-block"> *You must need A Registered Account before Login. </span>
-
                         <div id="register-link" class="text-right">
                             <a href="{{route('reg.form')}}" class="text-info">Register here</a>
                         </div>
@@ -86,3 +93,6 @@
     </div>
 </div>
 </body>
+</html>
+
+
