@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class AdminSeeder extends Seeder
 {
@@ -16,15 +14,15 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'type'  => 'admin',
+        User::create([
+
+            'type'  =>  'admin',
             'name'  =>  'admin',
             'address'  =>  'Dhaka',
             'email'  =>  'admin@gmail.com',
             'password'  =>  bcrypt('123456'),
-            'birthDate'  =>  '02/08/2021',
+            'birthDate'  =>  '1997-02-08',
             'phone'  =>  '01843066666',
-
 
         ]);
     }

@@ -47,13 +47,6 @@
 
     <section class="page-section" id="contact">
 
-        <a class="nav-link js-scroll-trigger" href="{{route('frontend.master')}}">
-            <button type="submit" class="btn btn-danger">
-                <i class="fas fa-power-off text-light"></i>
-                GO TO DASHBOARD
-            </button>
-        </a>
-
 
     <div class="container">
         <div class="text-center">

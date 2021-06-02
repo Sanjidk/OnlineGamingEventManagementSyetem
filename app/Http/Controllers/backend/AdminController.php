@@ -107,6 +107,41 @@ class AdminController extends Controller
 
 
 
+    public function approverequest($id)
+    {
+
+        $approve=Event::find($id);
+        $approve->update([
+
+            'status'=>'approved'
+
+        ]);
+            return redirect()->back()->with('message','Event successfully approved');
+
+
+
+
+    }
+
+    public function rejectrequest($id)
+    {
+        $approve=Event::find($id);
+        $approve->update([
+
+            'status'=>'rejected'
+
+        ]);
+        return redirect()->back()->with('message','Event Request Rejected');
+
+    }
+
+
+
+
+
+
+
+
 
 
 

@@ -81,9 +81,10 @@ class ManagersController extends Controller
 
     // show participator list
 
-    Public function showList()
+    Public function showList($id)
     {
-        $list=Event::paginate(5);
+        $list=Event::find($id);
+
         return view('frontend.Managers.list',compact('list'));
 
     }

@@ -33,13 +33,13 @@ Route::get('/', function ()
 // admin login
 Route::get('/admin', function ()
 {
-    return view('master');
-})->name('master');
+    return view('backend.Admin.dashboard');
+})->name('mastered');
 
 
 //admin login
 
-Route::get('admin/login/form',[UserController::class,'adminloginform'])->name('adminlogin.form');
+Route::get('admin/login',[UserController::class,'adminloginform'])->name('adminlogin.form');
 Route::post('admin/login/process',[UserController::class,'adminloginprocess'])->name('adminlogin.process');
 
 
@@ -100,7 +100,7 @@ Route::post('event/store', [ManagersController::class, 'event'])->name('event');
 
 // event list
 
-Route::get('event/list',[ManagersController::class,'showList'])->name('event.list');
+Route::get('event/list/{id}',[ManagersController::class,'showList'])->name('event.list');
 
 // event delete
 
@@ -173,7 +173,6 @@ Route::post('/user/payment',[PaymentController::class,'userPayment'])->name('use
 
 
 
-
 Route::get('user/payment/requests',[PaymentController::class,'userPaymentRequests'])->name('user.payment.requests');
 
 
@@ -183,3 +182,16 @@ Route::get('all/event/view',[FrontendManagers::class,'eventView'])->name('all.ev
 
 
 Route::get('all/req/view',[AdminController::class,'managerRequests'])->name('all.req.view');
+
+
+Route::get('/approve/all/request/{id}',[AdminController::class,'approverequest'])->name('approve.request');
+Route::get('/reject/all/request/{id}',[AdminController::class,'rejectrequest'])->name('reject.request');
+
+
+
+
+// admin login
+Route::get('/users', function ()
+{
+    return view('frontend.muster');
+})->name('muster');

@@ -11,9 +11,9 @@ class ManagersController extends Controller
 
     public function eventView()
     {
-        $id=auth()->user();
+//        $id=auth()->user();
 
-        $events= Event::all();
+        $events= Event::where('status','approved')->get();
         return view('frontend.Managers.mypost',compact('events'));
     }
 

@@ -26,6 +26,8 @@ class CreateEventsTable extends Migration
             $table->string('startDate');
             $table->string('endDate');
             $table->string('banner');
+            $table->string('status')->default('pending');
+
             $table->timestamps();
         });
     }

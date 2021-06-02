@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login Panel</title>
+    <title>Admin login panel</title>
 
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
@@ -16,7 +16,7 @@
         .form {
             position: relative;
             z-index: 1;
-            background: #f80505;
+            background: #FFFFFF;
             max-width: 360px;
             margin: 0 auto 100px;
             padding: 45px;
@@ -38,16 +38,18 @@
             font-family: "Roboto", sans-serif;
             text-transform: uppercase;
             outline: 0;
-            background: #072bb8;
+            background: #4CAF50;
             width: 100%;
             border: 0;
             padding: 15px;
             color: #FFFFFF;
             font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
             cursor: pointer;
         }
         .form button:hover,.form button:active,.form button:focus {
-            background: #41eaea;
+            background: #43A047;
         }
         .form .message {
             margin: 15px 0 0;
@@ -55,7 +57,7 @@
             font-size: 12px;
         }
         .form .message a {
-            color: #30ffb7;
+            color: #4CAF50;
             text-decoration: none;
         }
         .form .register-form {
@@ -107,10 +109,6 @@
     </style>
 </head>
 <body>
-
-
-
-
 
 <div class="login-page">
     <div class="form">

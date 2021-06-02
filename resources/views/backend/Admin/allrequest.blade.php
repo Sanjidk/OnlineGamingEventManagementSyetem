@@ -1,3 +1,5 @@
+@extends('backend.partial.mastered')
+@section('content')
 
 <!doctype html>
 <html lang="en">
@@ -67,12 +69,12 @@
                                 <td>
 
 
-                                    <a href="" type="button" class="btn btn-success waves-effect">
+                                    <a href="{{route('approve.request',$data->id)}}" type="button" class="btn btn-success waves-effect">
                                         <i class="material-icons"> approve</i>
 
                                     </a>
 
-                                    <a href="" type="button" class="btn btn-danger waves-effect">
+                                    <a href="{{route('reject.request',$data->id)}}" type="button" class="btn btn-danger waves-effect">
                                         <i class="material-icons"> reject</i>
 
                                     </a>
@@ -98,3 +100,5 @@
 
 </body>
 </html>
+
+@stop

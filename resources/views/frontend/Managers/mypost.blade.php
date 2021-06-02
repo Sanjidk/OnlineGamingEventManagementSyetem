@@ -138,10 +138,10 @@
             <div class="flex-viewport" style="overflow: hidden; position: relative;">
                 <ul class="slides image-box hotel listing-style1" style="width: 1000%;">
 
-
                     @foreach($events as $data)
 
-                    <li style="width: 270px; float: left; display: block;">
+
+                        <li style="width: 270px; float: left; display: block;">
                         <article class="box">
                             <figure> <a href="#" class="hover-effect popup-gallery">
                                     <img width="270" height="160" alt="" src="{{url('/photo/banner/',$data->banner)}}" draggable="false">
@@ -150,7 +150,7 @@
                                 <h4 class="box-title">{{$data->eventName}} </h4>
                                 <br>
                                 <div class="action">
-                                    <a class="btn btn-primary" href="{{route('event.list')}}"> View Details</a>
+                                    <a class="btn btn-primary" href="{{route('event.list',[$data->id])}}"> View Details</a>
 
                                     @if($data->id == auth()->user()->id)
 
@@ -169,6 +169,7 @@
 
                         </article>
                     </li>
+
                     @endforeach
                 </ul>
             </div>

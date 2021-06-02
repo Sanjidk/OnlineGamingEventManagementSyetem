@@ -56,22 +56,22 @@
 
 
 
-                        @foreach($list as $key=>$data )
-                            <tr>
-                                <th scope="row">{{$key+1}}</th>
 
-                                <td>{{$data->managers}}</td>
-                                <td>{{$data->bkash}}</td>
-                                <td>{{$data->eventName}}</td>
-                                <td>{{$data->fee}}</td>
-                                <td>{{$data->eventDate}}</td>
-                                <td>{{$data->startDate}}</td>
-                                <td>{{$data->endDate}}</td>
+                            <tr>
+                                <th scope="row">{{$list->id}}</th>
+
+                                <td>{{$list->managers}}</td>
+                                <td>{{$list->bkash}}</td>
+                                <td>{{$list->eventName}}</td>
+                                <td>{{$list->fee}}</td>
+                                <td>{{$list->eventDate}}</td>
+                                <td>{{$list->startDate}}</td>
+                                <td>{{$list->endDate}}</td>
 
 
 
                             </tr>
-                        @endforeach
+
 
 
                         </tbody>

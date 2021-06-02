@@ -108,7 +108,7 @@ class UserController extends Controller
             $request->session()->regenerate();
             if(auth()->user()->type == 'admin'){
 
-                return redirect(route('master'));
+                return redirect(route('mastered'));
             }else{
 
                 return redirect()->back()->with('message','User Not Authorize');

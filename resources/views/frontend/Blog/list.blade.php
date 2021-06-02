@@ -3,11 +3,6 @@
 <html lang="en">
 <head>
 
-    <a class="nav-link js-scroll-trigger" href="{{route('frontend.master')}}">
-        <button type="submit" class="btn btn-danger">
-            GO TO DASHBOARD
-        </button>
-    </a>
 
 
     <title>Participators</title>

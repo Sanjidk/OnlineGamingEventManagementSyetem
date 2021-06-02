@@ -1,5 +1,5 @@
-@extends('master')
-@section('page')
+@extends('backend.partial.mastered')
+@section('content')
 
     <div class="body">
         <div class="table-responsive">
