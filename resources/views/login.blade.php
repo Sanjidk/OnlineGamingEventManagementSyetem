@@ -38,7 +38,7 @@
 <a class="nav-link js-scroll-trigger" href="{{route('home')}}">
     <button type="submit" class="btn btn-danger">
         <i class="fas fa-power-off text-light"></i>
-        GO TO HOME
+        BACK TO HOME
     </button>
 </a>
 

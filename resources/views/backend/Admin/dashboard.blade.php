@@ -25,7 +25,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-@include('frontend.partial.sidebar')
+@include('backend.partial.sidebar')
 <!-- End of Sidebar -->
 
 
@@ -45,7 +45,7 @@
 
 
             <!-- Topbar -->
-        @include('frontend.partial.header')
+        @include('backend.partial.header')
         <!-- End of Topbar -->
 
 
@@ -167,7 +167,7 @@
 
 
         <!-- Footer -->
-    @include('frontend.partial.footer')
+    @include('backend.partial.footer')
     <!-- End of Footer -->
 
 

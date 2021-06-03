@@ -1,13 +1,14 @@
+@extends('frontend.Others.muster')
+@section('content')
 
-<!doctype html>
 
-<head>
+{{--<head>--}}
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Online Gaming Event Management System</title>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
     <style>.section {
-            margin-top: 100px
+            margin-top: 20px
         }
 
         * {
@@ -118,20 +119,15 @@
 
 
     </style>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script type='text/javascript'></script>
-</head>
+{{--    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>--}}
+{{--    <script type='text/javascript'></script>--}}
+{{--</head>--}}
 <body>
 <div class="section">
     <div class="container">
 
         <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-4">
-                <button class="btn btn-#000000">
-                    <h2 style="color: #01156b" class="masthead-heading">EVENT LIST</h2>
-
-                </button>
-            </div>
+                    <h2 class="text-dark">EVENT LIST</h2>
         </div>
 
         <div class="image-carousel style2 flexslider" data-animation="slide" data-item-width="270" data-item-margin="30">
@@ -178,3 +174,4 @@
 </div>
 </body>
 
+@stop

@@ -11,7 +11,7 @@
 
 
                     <h2 >
-                        All Registered manager
+                        All Event List
                         <span style="color:green ">{{$events->count()}}</span>
 
                     </h2>
@@ -39,7 +39,7 @@
 
                     <tr>
                         <td>{{$key + 1}}</td>
-                        <td>{{$event->manager_id}}</td>
+                        <td>{{$event->id}}</td>
                         <td>{{$event->bkash}}</td>
                         <td>{{$event->max_participate}}</td>
                         <td>{{$event->fee}}</td>

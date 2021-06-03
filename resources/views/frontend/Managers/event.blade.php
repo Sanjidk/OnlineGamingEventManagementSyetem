@@ -1,7 +1,15 @@
+@extends('frontend.Others.muster')
+@section('content')
+
+
+    @if(Session()->has('message'))
+        <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
+    @endif
+
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+{{--<head>--}}
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow">
 
@@ -9,24 +17,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <style type="text/css">
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #355ce9;
-            height: 100vh;
-        }
+        /*body {*/
+        /*    margin: 0;*/
+        /*    padding: 0;*/
+        /*    background-color: #355ce9;*/
+        /*    height: 100vh;*/
+        /*}*/
 
         #login .container #login-row #login-column #login-box {
             margin-top: 0px;
             max-width: 550px;
             height: 820px;
             border: 1px solid #f30f0f;
-            background-color: #0c0b0e;
+            background-color: #550cf6;
         }    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--}}
+{{--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>--}}
 
-</head>
+{{--</head>--}}
 
 <body>
 
@@ -47,9 +55,6 @@
 
                         <h2 class="text-center" style="color: #dee9f8 ">CREATE EVENT</h2>
 
-                        @if(Session()->has('message'))
-                            <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
-                        @endif
 
 <br>
 
@@ -144,7 +149,7 @@
 
                         <center>
                             <h3 style="color: whitesmoke">
-                                Pay the ADMIN FEE To this Bkash Personal number 01788771464
+                                Pay the ADMIN FEE To this Bkash Personal number 01843066666
                             </h3>
                         </center>
 
@@ -167,3 +172,5 @@
 </div>
 </body>
 </html>
+
+@stop

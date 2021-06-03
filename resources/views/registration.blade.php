@@ -32,7 +32,7 @@
 <a class="nav-link js-scroll-trigger" href="{{route('login.form')}}">
     <button type="submit" class="btn btn-danger">
         <i class="fas fa-power-off text-light"></i>
-        GO TO LOGIN PAGE
+        BACK TO LOGIN
     </button>
 </a>
 
@@ -45,7 +45,7 @@
                 <div id="login-box" class="col-md-12">
                     <form class="form-horizontal" role="form" action="{{route('register')}}" method="post">
                         @csrf
-                        <h2 class="text-center" style="color: #dee9f8 ">REGISTRATION FORM</h2>
+                        <h2 class="text-center" style="color: #dee9f8 ">Create Account</h2>
 
                         @if(Session()->has('message'))
                             <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>

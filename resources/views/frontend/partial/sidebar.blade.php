@@ -14,10 +14,12 @@
 
 
     <!-- Nav Item - Charts -->
+
+
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-wallet"></i>
-            <span> All User </span></a>
+        <a class="nav-link" href="{{route('frontend.master')}}">
+            <i class="fas fa-fw fa-adjust"></i>
+            <span> Dashboard </span></a>
     </li>
 
 
@@ -31,23 +33,24 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
-
+    @if(auth()->user()->type == 'Manager')
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('event.form')}}">
             <i class="fas fa-fw fa-random"></i>
             <span>Create Event</span></a>
     </li>
 
 
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('user.payment.requests')}}">
             <i class="fas fa-fw fa-walking"></i>
             <span>Request For Join</span></a>
     </li>
+    @endif
 
 
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('all.event.view')}}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>View All Event's</span></a>
     </li>
@@ -55,15 +58,7 @@
 
 
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-gavel"></i>
-            <span>View & Join Event's</span></a>
-    </li>
-
-
-
-    <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('all.event.view')}}">
             <i class="fas fa-fw fa-image"></i>
             <span>Participator List</span></a>
     </li>

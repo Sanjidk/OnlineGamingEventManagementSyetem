@@ -31,16 +31,22 @@ Route::get('/', function ()
 
 
 // admin login
-Route::get('/admin', function ()
+Route::get('/adminboard', function ()
 {
     return view('backend.Admin.dashboard');
 })->name('mastered');
 
+////
+//Route::get('/minister', function ()
+//{
+//    return view('frontend.Others.main');
+//})->name('muster');
+
 
 //admin login
 
-Route::get('admin/login',[UserController::class,'adminloginform'])->name('adminlogin.form');
-Route::post('admin/login/process',[UserController::class,'adminloginprocess'])->name('adminlogin.process');
+Route::get('admin/login/form',[UserController::class,'adminloginform'])->name('adminlogin.form');
+Route::post('admin/login/done',[UserController::class,'adminloginprocess'])->name('adminlogin.process');
 
 
 //All backend blog
@@ -55,10 +61,10 @@ Route::get('all/blog/delete/{id}',[AdminController::class,'blogdelete'])->name('
 Route::group(['middleware' => 'auth'],function(){
 
 // after log in user
-Route::get('/master', function ()
+Route::get('/userform', function ()
 {
-    return view('frontend.Others.master');
-})->name('frontend.Others.master');
+    return view('frontend.Others.main');
+})->name('frontend.master');
 
 
 
@@ -156,7 +162,7 @@ Route::get('login/form',[UserController::class,'loginForm'])->name('login.form')
 
 //Login Authentication
 
-Route::post('login/process',[UserController::class,'userLogin'])->name('user.login');
+Route::post('/login/process',[UserController::class,'userLogin'])->name('user.login');
 Route::get('/logout',[UserController::class,'userLogout'])->name('user.logout');
 
 
@@ -190,8 +196,4 @@ Route::get('/reject/all/request/{id}',[AdminController::class,'rejectrequest'])-
 
 
 
-// admin login
-Route::get('/users', function ()
-{
-    return view('frontend.muster');
-})->name('muster');
+

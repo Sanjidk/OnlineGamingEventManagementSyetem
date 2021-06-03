@@ -54,6 +54,19 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
+                @if(Session()->has('success'))
+                    <div style="color:green" class="alert alert-success"> {{ Session()->get('success') }}</div>
+                @endif
+
+
+                <div>
+
+                    <h6 class="m-0 font-weight-bold text-dark"> Online Trending Games & Details</h6>
+
+                </div>
+
+                <br>
+
                 <!-- Content Row -->
                 <div class="row">
 
@@ -63,7 +76,7 @@
                         <!-- Illustrations -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Free Fire</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Garena Free Fire</h6>
                             </div>
                             <div class="card-body">
                                 <div class="text-center">

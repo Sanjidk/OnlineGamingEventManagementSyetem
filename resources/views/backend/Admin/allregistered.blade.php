@@ -11,7 +11,7 @@
 
                     <h2 >
 
-                        All Registered user
+                        All Registered User
                         <span style="color:green ">{{$users->count()}}</span>
 
                     </h2>

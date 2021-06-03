@@ -53,8 +53,6 @@
 
 
 
-
-
             </div>
             <!-- /.container-fluid -->
 
@@ -62,17 +60,9 @@
         <!-- End of Main Content -->
 
 
-
-
-
-
         <!-- Footer -->
     @include('frontend.partial.footer')
         <!-- End of Footer -->
-
-
-
-
 
 
     </div>
@@ -80,11 +70,6 @@
 
 </div>
 <!-- End of Page Wrapper -->
-
-
-
-
-
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset("muster")}}/vendor/jquery/jquery.min.js"></script>
@@ -104,5 +89,4 @@
 <script src="{{asset("muster")}}/js/demo/chart-pie-demo.js"></script>
 
 </body>
-
 </html>

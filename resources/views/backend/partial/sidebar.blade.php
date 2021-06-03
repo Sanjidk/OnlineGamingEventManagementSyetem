@@ -15,9 +15,16 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('mastered')}}">
+            <i class="fas fa-fw fa-adjust"></i>
+            <span> Dashboard </span></a>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('all.registered')}}">
             <i class="fas fa-fw fa-wallet"></i>
-            <span> All User </span></a>
+            <span> All Users </span></a>
     </li>
 
 
@@ -33,40 +40,18 @@
 
 
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('all.req.view')}}">
             <i class="fas fa-fw fa-random"></i>
-            <span>Create Event</span></a>
+            <span>All Request For Create Event</span></a>
     </li>
 
 
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-walking"></i>
-            <span>Request For Join</span></a>
-    </li>
-
-
-    <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('all.eventreg')}}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>View All Event's</span></a>
     </li>
 
-
-
-    <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-gavel"></i>
-            <span>View & Join Event's</span></a>
-    </li>
-
-
-
-    <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-image"></i>
-            <span>Participator List</span></a>
-    </li>
 
 
 
@@ -75,15 +60,10 @@
 
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('blog.form')}}">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Blog Writing</span></a>
-    </li>
 
 
     <li class="nav-item">
-        <a class="nav-link" href="{{route('blog.list')}}">
+        <a class="nav-link" href="{{route('all.blogg')}}">
             <i class="fas fa-fw fa-table"></i>
             <span>View Blog</span></a>
     </li>
