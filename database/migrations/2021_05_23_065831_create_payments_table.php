@@ -14,10 +14,11 @@ class CreatePaymentsTable extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('event_id');
-            $table->foreignId('manager_id');
-            $table->string('user_id');
+            $table->id($data='id');
+            $table->string('part_name');
+            $table->string('eventName');
+            $table->string('event_id');
+            $table->string('manager_id');
             $table->string('phone');
             $table->string('transaction');
             $table->string('fee');

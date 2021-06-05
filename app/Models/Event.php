@@ -12,10 +12,8 @@ class Event extends Model
 
     public function managerEvent()
     {
-        return $this->belongsTo(User::class,'id','id');
+        return $this->belongsTo(User::class,'manager_id','id');
     }
-
-
 
 
 }

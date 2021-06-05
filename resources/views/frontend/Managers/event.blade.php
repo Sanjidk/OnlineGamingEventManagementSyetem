@@ -59,10 +59,13 @@
 <br>
 
                         <div class="form-group">
-                            <label for="managers" class="text-light col-sm-4 control-label">Event Manager</label>
-                            <input type="text" id="managers" placeholder="Manager Name" class="col-sm-6" name= "managers">
-                            <span class="col-sm-8" style="color: #13f3c3">@error('managers'){{$message}}@enderror</span>
+                            <label for="manager_id" class="text-light col-sm-4 control-label">Event Manager</label>
+                            <input type="text" id="manager_id" readonly class="col-sm-6" value="{{auth()->user()->name}}" name="manager_id">
                         </div>
+
+
+
+
 
 
 

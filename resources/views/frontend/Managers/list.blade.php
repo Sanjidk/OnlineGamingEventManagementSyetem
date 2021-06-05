@@ -18,7 +18,6 @@
                 </div>
 
 
-
                 <thead class="thead-primary">
                 <tr>
                     <th scope="col">#</th>

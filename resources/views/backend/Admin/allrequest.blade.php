@@ -42,7 +42,7 @@
                     <tr>
                         <th scope="row">{{$key+1}}</th>
 
-                        <td>{{$data->managers}}</td>
+                        <td>{{$data->manager_id}}</td>
                         <td>{{$data->eventName}}</td>
                         <td>{{$data->bkash}}</td>
                         <td>{{$data->transac_id}}</td>

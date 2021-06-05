@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ManagersController extends Controller
@@ -12,8 +13,8 @@ class ManagersController extends Controller
 
     public function eventform()
     {
-
-        return view('frontend.Managers.event');
+        $users=User::all();
+        return view('frontend.Managers.event',compact('users'));
     }
 
 
@@ -23,7 +24,7 @@ class ManagersController extends Controller
     {
 
         $request->validate([
-            'managers' => 'required',
+            'manager_id' => 'required',
             'max_participate' => 'required',
             'admin_fee' => 'required',
             'bkash' => 'required',
@@ -50,7 +51,7 @@ class ManagersController extends Controller
         }
 
         $events = new Event();
-        $events->managers = $request->managers;
+        $events->manager_id = $request->manager_id;
         $events->max_participate = $request->max_participate;
         $events->admin_fee = $request->admin_fee;
         $events->bkash = $request->bkash;
@@ -76,30 +77,6 @@ class ManagersController extends Controller
         return redirect()->back()->with('message','Event deleted sucessfully');
 
     }
-
-
-
-    // show participator list
-
-    Public function showList($id)
-    {
-        $list=Event::find($id);
-
-        return view('frontend.Managers.list',compact('list'));
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

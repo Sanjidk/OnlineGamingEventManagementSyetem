@@ -42,9 +42,9 @@
 
 
     <li class="nav-item">
-        <a class="nav-link" href="{{route('user.payment.requests')}}">
+        <a class="nav-link" href="{{route('all.req.viewlist')}}">
             <i class="fas fa-fw fa-walking"></i>
-            <span>Request For Join</span></a>
+            <span>Participator Request For Join</span></a>
     </li>
     @endif
 
@@ -58,7 +58,7 @@
 
 
     <li class="nav-item">
-        <a class="nav-link" href="{{route('all.event.view')}}">
+        <a class="nav-link" href="{{route('all.participate.list')}}">
             <i class="fas fa-fw fa-image"></i>
             <span>Participator List</span></a>
     </li>

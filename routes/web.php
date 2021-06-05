@@ -104,9 +104,9 @@ Route::get('all/event/delete/{id}',[AdminController::class,'alleventregdelete'])
 Route::get('event/form', [ManagersController::class, 'eventform'])->name('event.form');
 Route::post('event/store', [ManagersController::class, 'event'])->name('event');
 
-// event list
+// event showlist
 
-Route::get('event/list/{id}',[ManagersController::class,'showList'])->name('event.list');
+Route::get('event/list/{id}',[FrontendManagers::class,'showList'])->name('event.list');
 
 // event delete
 
@@ -197,3 +197,13 @@ Route::get('/reject/all/request/{id}',[AdminController::class,'rejectrequest'])-
 
 
 
+
+Route::get('all/req/viewlist',[FrontendManagers::class,'participatorRequests'])->name('all.req.viewlist');
+
+
+Route::get('/approved/all/request/{id}',[FrontendManagers::class,'approvedrequest'])->name('approved.request');
+Route::get('/rejected/all/request/{id}',[FrontendManagers::class,'rejectedrequest'])->name('rejected.request');
+
+
+
+Route::get('all/participator/list',[FrontendManagers::class,'participatorlist'])->name('all.participate.list');

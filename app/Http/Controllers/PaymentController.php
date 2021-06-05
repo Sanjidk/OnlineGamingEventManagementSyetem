@@ -12,8 +12,10 @@ class PaymentController extends Controller
 
     // participator pay to manager
 
+
     public function payments($id)
     {
+//        $users=User::all();
         $payment=Event::with('managerEvent')->find($id);
         return view('frontend.Participators.payment',compact('payment'));
     }
@@ -22,26 +24,28 @@ class PaymentController extends Controller
     public function userPayment(Request $request)
     {
         $request->validate([
+            'part_name' => 'required',
+            'eventName' => 'required',
             'event_id' => 'required',
             'manager_id' => 'required',
-            'user_id' => 'required',
             'phone' => 'required',
             'transaction' => 'required',
-            'event_fee' => 'required',
+            'fee' => 'required',
         ]);
 
 
         $payments = Payment::create([
 
-            'event_id' => $request->event_id,
+        'part_name' => $request->part_name,
+        'eventName' => $request->eventName,
+        'event_id' => $request->event_id,
         'manager_id' => $request->manager_id,
-        'user_id' => $request->user_id,
         'phone' => $request->phone,
         'transaction' => $request->transaction,
         'fee' => $request->fee,
 
         ]);
-        return redirect()->back()->with('message', 'Request Pending,wait for confirm by Manager ');
+        return redirect()->back()->with('message', 'Request Pending,wait for confirm by Event Manager ');
     }
 
 

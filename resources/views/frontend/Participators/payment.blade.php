@@ -56,13 +56,16 @@
 
                         <br>
 
-
+                        <div class="form-group">
+                            <label for="part_name" class="text-light col-sm-4 control-label">Participator's Name</label>
+                            <input type="text" readonly value="{{auth()->user()->name}}" id="part_name" class="col-sm-7" name="part_name" >
+                        </div>
 
 
 
                         <div class="form-group">
                             <label for="event_id" class="text-light col-sm-4 control-label">Event Name</label>
-                                <input type="text" readonly value="{{$payment->eventName}}" id="event_id" class="col-sm-7" >
+                                <input type="text" readonly value="{{$payment->eventName}}" id="event_id" class="col-sm-7" name="eventName" >
                         </div>
                         <input type="text" hidden readonly value="{{$payment->id}}" id="event_id" name= "event_id">
 
@@ -74,10 +77,8 @@
 
                         <div class="form-group">
                             <label for="manager_id" class="text-light col-sm-4 control-label">Event Manager</label>
-                                <input type="text" id="manager_id" readonly value="{{$payment->managerEvent->name}}" class="col-sm-7" >
+                            <input type="text" class="col-sm-7" id="manager_id" readonly value="{{$payment->manager_id}}" name="manager_id">
                         </div>
-                        <input type="text" id="manager_id" hidden readonly value="{{$payment->manager_id}}" name= "manager_id">
-                        <input type="text" id="manager_id" hidden readonly value="{{auth()->user()->id}}" name= "user_id">
 
 
 

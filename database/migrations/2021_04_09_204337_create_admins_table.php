@@ -22,6 +22,8 @@ class CreateAdminsTable extends Migration
             $table->string('password');
             $table->string('birthDate');
             $table->string('phone',13);
+            $table->timestamps();
+
         });
     }
 

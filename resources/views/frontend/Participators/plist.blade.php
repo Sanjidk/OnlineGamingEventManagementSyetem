@@ -24,17 +24,13 @@
                     <th>Event Name</th>
                     <th>Participator Name</th>
                     <th>Participator's Bkash Number</th>
-                    <th>Transaction ID</th>
                     <th>Event Fee</th>
-                    <th>Status</th>
                     <th>Created At</th>
-                    <th>Action</th>
 
                 </tr>
                 </thead>
 
                 <tbody>
-
                 @foreach($payment as $key=>$data )
                     <tr>
                         <th scope="row">{{$key+1}}</th>
@@ -42,25 +38,9 @@
                         <td>{{$data->eventName}}</td>
                         <td>{{$data->part_name}}</td>
                         <td>{{$data->phone}}</td>
-                        <td>{{$data->transaction}}</td>
                         <td>{{$data->fee}}</td>
-                        <td>{{$data->status}}</td>
                         <td>{{$data->created_at}}</td>
-                        <td>
 
-
-                            <a href="{{route('approved.request',$data->id)}}" type="button" class="btn btn-success waves-effect">
-                                <i class="material-icons"> approve</i>
-
-                            </a>
-
-                            <a href="{{route('rejected.request',$data->id)}}" type="button" class="btn btn-danger waves-effect">
-                                <i class="material-icons"> reject</i>
-
-                            </a>
-
-
-                        </td>
 
                     </tr>
                 @endforeach
