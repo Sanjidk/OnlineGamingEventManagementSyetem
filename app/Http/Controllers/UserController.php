@@ -136,4 +136,16 @@ class UserController extends Controller
 
 
 
+    public function alluserlist()
+    {
+
+        $users = User::all();
+
+
+        return view('frontend.Others.userlist',compact('users'));
+    }
+
+
+
+
 }

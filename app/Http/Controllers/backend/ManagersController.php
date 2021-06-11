@@ -25,6 +25,7 @@ class ManagersController extends Controller
 
         $request->validate([
             'manager_id' => 'required',
+            'user_id' => 'required',
             'max_participate' => 'required',
             'admin_fee' => 'required',
             'bkash' => 'required',
@@ -52,6 +53,7 @@ class ManagersController extends Controller
 
         $events = new Event();
         $events->manager_id = $request->manager_id;
+        $events->user_id = $request->user_id;
         $events->max_participate = $request->max_participate;
         $events->admin_fee = $request->admin_fee;
         $events->bkash = $request->bkash;

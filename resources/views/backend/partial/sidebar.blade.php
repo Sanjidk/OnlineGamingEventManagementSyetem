@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a style="color: #e00202" class=" sidebar-brand bg-light d-flex align-items-center justify-content-center">
+    <a style="color: #0118ea" class=" sidebar-brand bg-light d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-gamepad"></i>
         </div>
@@ -23,15 +23,15 @@
 
     <li class="nav-item">
         <a class="nav-link" href="{{route('all.registered')}}">
-            <i class="fas fa-fw fa-wallet"></i>
+            <i class="fas fa-fw fa-save"></i>
             <span> All Users </span></a>
     </li>
 
 
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-peace"></i>
-            <span> Rules </span></a>
+        <a class="nav-link" href="{{route('income.list')}}">
+            <i class="fas fa-fw fa-wallet"></i>
+            <span> My Income </span></a>
     </li>
 
 

@@ -23,10 +23,11 @@
     </li>
 
 
+
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-peace"></i>
-            <span> Rules </span></a>
+        <a class="nav-link" href="{{route('all.userlist')}}">
+            <i class="fas fa-fw fa-wallet"></i>
+            <span> All User </span></a>
     </li>
 
 

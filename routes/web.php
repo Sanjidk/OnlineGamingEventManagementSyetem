@@ -138,6 +138,17 @@ Route::get('blog/delete/{id}',[BlogController::class,'deleteBlog'])->name('blog.
 
 
 
+// admin income list
+
+    Route::get('income/list',[AdminController::class,'income'])->name('income.list');
+
+
+// income List delete
+
+    Route::get('income/delete/{id}',[AdminController::class,'incomedelete'])->name('income.delete');
+
+
+
 
 });
 
@@ -207,3 +218,6 @@ Route::get('/rejected/all/request/{id}',[FrontendManagers::class,'rejectedreques
 
 
 Route::get('all/participator/list',[FrontendManagers::class,'participatorlist'])->name('all.participate.list');
+
+
+Route::get('all/usersslist',[UserController::class,'alluserlist'])->name('all.userlist');

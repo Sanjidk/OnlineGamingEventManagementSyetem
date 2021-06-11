@@ -40,7 +40,7 @@
                 <tr>
                     <th scope="row">{{$list->id}}</th>
 
-                    <td>{{$list->managers}}</td>
+                    <td>{{$list->manager_id}}</td>
                     <td>{{$list->bkash}}</td>
                     <td>{{$list->eventName}}</td>
                     <td>{{$list->fee}}</td>

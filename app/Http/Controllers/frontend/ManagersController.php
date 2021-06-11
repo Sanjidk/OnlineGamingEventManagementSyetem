@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\Payment;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ManagersController extends Controller

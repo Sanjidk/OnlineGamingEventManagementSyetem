@@ -126,6 +126,28 @@ class AdminController extends Controller
 
 
 
+// admin income
+
+    public function income()
+    {
+
+        $events = Event::all();
+
+        //dd($events->all());
+        return view('backend.Admin.myincome',compact('events'));
+    }
+
+
+    public function incomedelete($id)
+
+    {
+
+        Event::find($id)->delete();
+
+        return redirect()->back()->with('message','Deleted successfully');
+    }
+
+
 
 
 

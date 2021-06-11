@@ -2,13 +2,23 @@
 @section('content')
 
 
+    <h1 style="color: blue">
+        ADMIN Fee : 300 BDT,,     Bkash Number : 01843066666
+    </h1>
+
+
     @if(Session()->has('message'))
         <div style="color:green" class="alert alert-success"> {{ Session()->get('message') }}</div>
     @endif
 
 
+
 <!DOCTYPE html>
 <html lang="en">
+
+
+
+
 {{--<head>--}}
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow">
@@ -62,6 +72,8 @@
                             <label for="manager_id" class="text-light col-sm-4 control-label">Event Manager</label>
                             <input type="text" id="manager_id" readonly class="col-sm-6" value="{{auth()->user()->name}}" name="manager_id">
                         </div>
+                        <input type="text" id="manager_id" hidden readonly class="col-sm-6" value="{{auth()->user()->id}}" name="user_id">
+
 
 
 
@@ -79,7 +91,7 @@
 
                         <div class="form-group">
                             <label for="admin_fee" class="text-light col-sm-4 control-label">Admin Fee [BDT]</label>
-                            <input type="number" placeholder="BDT" id="admin_fee" class="col-sm-6" name= "admin_fee">
+                            <input type="text" readonly value="300 BDT" id="admin_fee" class="col-sm-6" name= "admin_fee">
                             <span class="col-sm-8" style="color: #13f3c3">@error('admin_fee'){{$message}}@enderror</span>
                         </div>
 
@@ -152,7 +164,7 @@
 
                         <center>
                             <h3 style="color: whitesmoke">
-                                Pay the ADMIN FEE To this Bkash Personal number 01843066666
+                                Pay the ADMIN FEE 300 BDT To this Bkash Personal number 01843066666
                             </h3>
                         </center>
 

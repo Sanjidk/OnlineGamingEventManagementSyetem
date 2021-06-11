@@ -44,8 +44,6 @@
             padding: 15px;
             color: #FFFFFF;
             font-size: 14px;
-            -webkit-transition: all 0.3 ease;
-            transition: all 0.3 ease;
             cursor: pointer;
         }
         .form button:hover,.form button:active,.form button:focus {

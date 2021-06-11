@@ -27,12 +27,11 @@
                     <div class="action">
                         <a class="btn btn-primary" href="{{route('event.list',[$data->id])}}"> View Details</a>
 
-                        @if($data->id == auth()->user()->id)
-
+                        @if($data->user_id==auth()->user()->id)
                             @if(auth()->user()->type == 'Manager')
-                                <a class="btn btn-danger" href="{{route('event.delete',$data->id)}}">Delete</a>
-                            @endif
 
+                            <a class="btn btn-danger" href="{{route('event.delete',$data->id)}}">Delete</a>
+                            @endif
                         @endif
 
 
