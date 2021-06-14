@@ -71,7 +71,7 @@ class ManagersController extends Controller
     }
 
 
-
+// delete event
 
     public function eventdelete($id)
     {
@@ -79,6 +79,43 @@ class ManagersController extends Controller
         return redirect()->back()->with('message','Event deleted sucessfully');
 
     }
+
+
+    // edit event
+
+    public function eventedit($id)
+    {
+
+        $events = Event::find($id);
+        return view('frontend.Managers.update',compact('events'));
+
+
+    }
+
+
+
+    public function eventUpdate(Request $request, $id)
+    {
+
+
+        $events= Event::find($id);
+        $events->manager_id = $request->manager_id;
+        $events->user_id = $request->user_id;
+        $events->max_participate = $request->max_participate;
+        $events->bkash = $request->bkash;
+        $events->fee = $request->fee;
+        $events->eventName = $request->eventName;
+        $events->eventDate = $request->eventDate;
+        $events->startDate = $request->startDate;
+        $events->endDate = $request->endDate;
+        $events->save();
+
+
+        return redirect()->back()->with('message','Event updated sucessfully');
+    }
+
+
+
 
 
 

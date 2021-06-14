@@ -112,6 +112,14 @@ Route::get('event/list/{id}',[FrontendManagers::class,'showList'])->name('event.
 
 Route::get('event/delete/{id}',[ManagersController::class,'eventdelete'])->name('event.delete');
 
+// edit event
+
+Route::get('event/edit/{id}',[ManagersController::class,'eventedit'])->name('event.edit');
+
+// update event
+
+Route::post('event/update/{id}',[ManagersController::class,'eventUpdate'])->name('event.update');
+
 
 
 

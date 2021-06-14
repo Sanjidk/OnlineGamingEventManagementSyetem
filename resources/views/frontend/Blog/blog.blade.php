@@ -65,8 +65,7 @@
             <div class="row align-items-stretch mb-3">
                 <label for="name" class="text-light col-sm-3 control-label">Your Name</label>
                 <div class="col-sm-9">
-                    <input type="text" id="name" placeholder="User Name" class="form-control" name= "name">
-                    <span style="color: #13f3c3">@error('name'){{$message}}@enderror</span>
+                    <input type="text" readonly id="name" value="{{auth()->user()->name}}" class="form-control" name= "name">
                 </div>
             </div>
 

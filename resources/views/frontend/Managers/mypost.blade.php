@@ -31,6 +31,7 @@
                             @if(auth()->user()->type == 'Manager')
 
                             <a class="btn btn-danger" href="{{route('event.delete',$data->id)}}">Delete</a>
+                            <a class="btn btn-info" href="{{route('event.edit',$data->id)}}">Edit</a>
                             @endif
                         @endif
 
