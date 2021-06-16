@@ -98,9 +98,17 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="pic/sanjid.JPG" alt="" />
+                    <img class="mx-auto rounded-circle" src="photo/pic/sanjid.JPG" alt="" />
                     <h4>Mahmud Sanjid</h4>
-                    <p class="text-dark ">Developer</p>
+                    <p class="text-dark ">
+                        Software Developer
+                        <br>
+                        Gmail: sanjidk24@gmail.com
+                        <br>
+                        Contact: 01843066666
+                    </p>
+
+                    <p class="text-dark "></p>
                 </div>
             </div>
         </div>
