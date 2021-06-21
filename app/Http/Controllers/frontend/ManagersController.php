@@ -20,7 +20,7 @@ class ManagersController extends Controller
     }
 
 
-    // show manager list
+    // show list
 
     Public function showList($id)
     {
@@ -37,20 +37,10 @@ class ManagersController extends Controller
 
     public function participatorRequests()
     {
-        $payment= Payment::where('status','approved')->get();
-        return view('frontend.Managers.viewlist',compact('payment'));
+        $payment= Payment::all();
+        return view('frontend.Managers.joinrequest',compact('payment'));
     }
 
-
-
-
-
-// participator list
-    public function participatorlist()
-    {
-        $payment=Payment::all();
-        return view('frontend.Participators.plist',compact('payment'));
-    }
 
 
 // participator approved
@@ -82,6 +72,15 @@ class ManagersController extends Controller
 
         ]);
         return redirect()->back()->with('message','Event Request Rejected');
+
+    }
+
+
+
+    public function deleteparticipator($id)
+    {
+        $payment=Payment::find($id)->delete();
+        return redirect()->back()->with('message','Participator deleted sucessfully');
 
     }
 

@@ -75,8 +75,9 @@
                     </div>
                     <div class="timeline-body"><p class="text-muted">
                             This is totally Gaming event website.
-                            Everyone can join event. And before joining, everyone need to registration & login first.
-                            Then they can join any event by fill up some statement.
+                            First, everyone need to registration before login.
+                            If you registered as Manager, you can create event by payment to Admin.
+                            & if you regestered as Participator, you can only join event by payment to Manager.
                             Also there has a BLOG option that any user can write BLOG about any game.
                             So, this website is very easy to use and helpful for users.
 

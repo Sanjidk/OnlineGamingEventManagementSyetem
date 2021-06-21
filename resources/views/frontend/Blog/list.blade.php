@@ -23,7 +23,7 @@
                     <th scope="col">#</th>
                     <th scope="col">User Name</th>
                     <th scope="col">Game Name</th>
-                    <th scope="col">Experience</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Action</th>
 
                 </tr>

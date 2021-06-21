@@ -216,8 +216,9 @@ Route::get('/reject/all/request/{id}',[AdminController::class,'rejectrequest'])-
 
 
 
+// participator join req list
 
-Route::get('all/req/viewlist',[FrontendManagers::class,'participatorRequests'])->name('all.req.viewlist');
+Route::get('all/req/view/req/list',[FrontendManagers::class,'participatorRequests'])->name('all.req.viewlist');
 
 
 Route::get('/approved/all/request/{id}',[FrontendManagers::class,'approvedrequest'])->name('approved.request');
@@ -225,7 +226,22 @@ Route::get('/rejected/all/request/{id}',[FrontendManagers::class,'rejectedreques
 
 
 
-Route::get('all/participator/list',[FrontendManagers::class,'participatorlist'])->name('all.participate.list');
+Route::get('all/participator/list/{id}',[ParticipatorsController::class,'participatorlist'])->name('all.participate.list');
+
+Route::get('all/participator/delete/{id}',[FrontendManagers::class,'deleteparticipator'])->name('participator.delete');
+
+// end participator join req list
+
+
+
+
 
 
 Route::get('all/usersslist',[UserController::class,'alluserlist'])->name('all.userlist');
+
+
+
+Route::get('all/event/view/list',[ParticipatorsController::class,'eventlistt'])->name('event.viewlist');
+
+
+//Route::get('event/list/{id}',[FrontendManagers::class,'showList'])->name('event.list');

@@ -22,6 +22,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Manager Name</th>
+                    <th scope="col">Maximum Participators</th>
                     <th scope="col">Manager Bkash Number</th>
                     <th scope="col">Event Name</th>
                     <th scope="col">Event Fee</th>
@@ -41,6 +42,7 @@
                     <th scope="row">{{$list->id}}</th>
 
                     <td>{{$list->manager_id}}</td>
+                    <td>{{$list->max_participate}}</td>
                     <td>{{$list->bkash}}</td>
                     <td>{{$list->eventName}}</td>
                     <td>{{$list->fee}}</td>

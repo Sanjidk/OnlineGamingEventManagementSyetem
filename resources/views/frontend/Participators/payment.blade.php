@@ -19,7 +19,7 @@
         #login .container #login-row #login-column #login-box {
             margin-top: 05px;
             max-width: 550px;
-            height: 550px;
+            height: 610px;
             border: 1px solid #f30f0f;
             background-color: #0c0b0e;
         }    </style>
@@ -29,14 +29,6 @@
 </head>
 
 <body>
-
-{{--<a class="nav-link js-scroll-trigger" href="{{route('frontend.master')}}">--}}
-{{--    <button type="submit" class="btn btn-danger">--}}
-{{--        <i class="fas fa-power-off text-light"></i>--}}
-{{--        GO TO DASHBOARD--}}
-{{--    </button>--}}
-{{--</a>--}}
-
 
 
 <div id="login">

@@ -57,11 +57,10 @@
     </li>
 
 
-
     <li class="nav-item">
-        <a class="nav-link" href="{{route('all.participate.list')}}">
+        <a class="nav-link" href="{{route('event.viewlist')}}">
             <i class="fas fa-fw fa-image"></i>
-            <span>Participator List</span></a>
+            <span>Participator's List</span></a>
     </li>
 
 

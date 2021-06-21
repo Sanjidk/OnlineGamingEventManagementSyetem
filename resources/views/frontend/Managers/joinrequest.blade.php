@@ -1,4 +1,3 @@
-
 @extends('frontend.Others.muster')
 @section('content')
 
@@ -44,15 +43,21 @@
                         <td>{{$data->phone}}</td>
                         <td>{{$data->transaction}}</td>
                         <td>{{$data->fee}}</td>
-                        <td>{{$data->status}}</td>
+
+                        <td>
+                            <div class="btn btn-info">
+                                {{$data->status}}
+                            </div>
+                        </td>
                         <td>{{$data->created_at}}</td>
                         <td>
 
-
+                                @if($data->status=='pending')
                             <a href="{{route('approved.request',$data->id)}}" type="button" class="btn btn-success waves-effect">
                                 <i class="material-icons"> approve</i>
 
                             </a>
+                            @endif
 
                             <a href="{{route('rejected.request',$data->id)}}" type="button" class="btn btn-danger waves-effect">
                                 <i class="material-icons"> reject</i>

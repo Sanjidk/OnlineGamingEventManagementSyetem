@@ -26,6 +26,7 @@
                 <tr>
                     <th>Sl</th>
                     <th>Event Manager</th>
+                    <th>Admin Fee</th>
                     <th>Event Name</th>
                     <th>Manager's Bkash Number</th>
                     <th>Transaction ID</th>
@@ -43,11 +44,17 @@
                         <th scope="row">{{$key+1}}</th>
 
                         <td>{{$data->manager_id}}</td>
+                        <td>{{$data->admin_fee}}</td>
                         <td>{{$data->eventName}}</td>
                         <td>{{$data->bkash}}</td>
                         <td>{{$data->transac_id}}</td>
                         <td>{{$data->fee}}</td>
-                        <td>{{$data->status}}</td>
+                        <td>
+                            <div class="btn btn-info">
+                            {{$data->status}}
+                            </div>
+                        </td>
+
                         <td>{{$data->created_at}}</td>
                         <td>
 

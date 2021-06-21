@@ -11,7 +11,7 @@
 
                     <h2 >
 
-                        All Registered user
+                        All Bloger
                         <span style="color:green ">{{$users->count()}}</span>
 
                     </h2>
@@ -24,7 +24,7 @@
                     <th>Sl</th>
                     <th>Name</th>
                     <th>Game Name</th>
-                    <th>Message</th>
+                    <th>Description</th>
                     <th>Created At</th>
                     <th>Action</th>
 

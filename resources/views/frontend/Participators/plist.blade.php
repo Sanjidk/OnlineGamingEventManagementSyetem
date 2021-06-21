@@ -12,7 +12,7 @@
 
                     <h2 >
 
-                        Details
+                    Participator List
 
                     </h2>
                 </div>
@@ -26,20 +26,33 @@
                     <th>Participator's Bkash Number</th>
                     <th>Event Fee</th>
                     <th>Created At</th>
+                    <th>Action</th>
 
                 </tr>
                 </thead>
 
                 <tbody>
-                @foreach($payment as $key=>$data )
+
+                @foreach($payment as $data)
+
                     <tr>
-                        <th scope="row">{{$key+1}}</th>
+                        <td>{{ $data->id }}</td>
 
                         <td>{{$data->eventName}}</td>
                         <td>{{$data->part_name}}</td>
                         <td>{{$data->phone}}</td>
                         <td>{{$data->fee}}</td>
                         <td>{{$data->created_at}}</td>
+
+
+                        <td>
+{{--                            @if($data->manager_id==auth()->user()->id)--}}
+                            @if(auth()->user()->type == 'Manager')
+                            <a class="btn btn-danger" href="{{route('participator.delete',$data->id)}}">Delete</a>
+                                @endif
+{{--                            @endif--}}
+
+                        </td>
 
 
                     </tr>
