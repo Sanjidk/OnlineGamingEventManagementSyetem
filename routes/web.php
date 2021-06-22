@@ -243,5 +243,3 @@ Route::get('all/usersslist',[UserController::class,'alluserlist'])->name('all.us
 
 Route::get('all/event/view/list',[ParticipatorsController::class,'eventlistt'])->name('event.viewlist');
 
-
-//Route::get('event/list/{id}',[FrontendManagers::class,'showList'])->name('event.list');

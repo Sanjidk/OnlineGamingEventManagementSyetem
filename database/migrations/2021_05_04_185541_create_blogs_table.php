@@ -17,7 +17,7 @@ class CreateBlogsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('game');
-            $table->string('message');
+            $table->text('message');
             $table->timestamps();
         });
     }
